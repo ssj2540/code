@@ -1,0 +1,53 @@
+/* font-face : 웹폰트를 선언! */
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+/* body에 기본 글자 스타일 (본문 스타일) 적용 */
+body {
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #555; /* 컬러 6글자가 똑같으면 3글자만 써도 적용 */
+    line-height: 1.5;
+}
+/* inherit(인에어) : html 태그의 기본 스타일을 리셋 시킴
+    body에서 선언한 기본 스타일로 적용 
+    브라우저가 주는 스타일 무시*/
+h1, h2, h3, h4, h5, h6 { /* 다중선택 ( ,로 연결) */
+    font-size: inherit;
+    font-weight: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal; /* 기울어진 글자를 똑바로 세우는 방법 */
+}
+a {
+    color: inherit;
+    text-decoration: none; /* 밑줄 삭제 (none과 nomal과 헷갈리지 말 것!) */
+}
+ol, li, ul {
+    list-style: none; /* 앞에 도형 또는 숫자 삭제 */
+}
+* { /* *(와일드카드) 모든 태그를 칭함 - 여백 삭제 */
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
