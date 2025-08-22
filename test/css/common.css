@@ -30,6 +30,7 @@ body {
     font-weight: 400;
     color: #555; /* 컬러 6글자가 똑같으면 3글자만 써도 적용 */
     line-height: 1.5;
+    word-break: keep-all; /* 가독성_단어 줄 넘김 방지 */
 }
 /* inherit(인에어) : html 태그의 기본 스타일을 리셋 시킴(브라우저가 주는 스타일 무시)
     body에서 선언한 기본 스타일로 적용 */
