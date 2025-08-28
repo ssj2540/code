@@ -114,6 +114,9 @@ footer .f_nav ul {
     gap: 0 42px; /* gap: 위아래px 좌우px; */
     display: flex; /* li를 좌우 배치 */
 }
+footer .f_nav ul .privacy a { /* <a>태그가 있을 시 웬만하면 a에 폰트 스타일을 줘야함 */
+    font-weight: 700;
+}
 footer .f_info {
     margin: 23px 0 25px 0;
     display: flex; /* address와 span의 좌우 배치 */
