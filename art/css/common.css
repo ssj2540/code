@@ -10,7 +10,6 @@ body {
     line-height: 1.5;
     color: #464C53;
     word-break: keep-all; /* 단어별로 줄 바꿈 */
-    letter-spacing: -2px;
 }
 .wrapper {
     width: 1260px;
