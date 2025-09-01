@@ -170,17 +170,17 @@ header .gnb ul li a {
     justify-content: space-between;
     align-items: center;
 }
-.community .media strong {
-    display: block; /* 인라인 태그가 혼자 있을 경우에 웬만하면 block을 주는게 좋음 */
+.community .media .sub_tit {
     font-weight: 700;
     letter-spacing: -0.02em;
+}
+.community .media strong {
+    display: block; /* 인라인 태그가 혼자 있을 경우에 웬만하면 block을 주는게 좋음 */
     padding: 0 0 5px 0;
 }
 .community .media .tit h2 {
     font-size: 40px;
-    font-weight: 700;
     line-height: 1.4;
-    letter-spacing: -0.02em;
 }
 .community .media .tit a {
     display: inline-block; /* block 줬는데 안 되면 inline-block */
