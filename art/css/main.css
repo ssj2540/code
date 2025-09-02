@@ -170,7 +170,7 @@ header .gnb ul li a {
     justify-content: space-between;
     align-items: center;
 }
-.community .media .sub_tit {
+.community .media .inner {
     font-weight: 700;
     letter-spacing: -0.02em;
 }
