@@ -21,7 +21,10 @@ header .gnb ul li a {
     padding: 0 26.5px 0 26.5px;
     letter-spacing: -0.02em;
 }
-
+header .gnb ul li a:hover {
+    font-weight: 700;
+    color: #FF8937;
+}
 /* <main class="container">는 일관적으로 잘 부르지 않음 */
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
@@ -88,6 +91,7 @@ header .gnb ul li a {
     color: #FF8937;
     padding: 9px 33px 9px 33px;
     border-radius: 30px;
+    transition: 0.3s; /* 서서히 바뀌게 해주는 스타일 */
 } 
 .biz .txt .btn_wrap a:hover {
     background-color: #FF8937;  /* border는 배경색과 같아서 유지 - border가 삭제되면 넓이와 높이가 달라짐 */
@@ -136,6 +140,11 @@ header .gnb ul li a {
     padding: 9px 33px 9px 33px;
     border-radius: 30px;
     margin: 44px 0 0 0;
+    transition: 0.3s;
+}
+.community .news .tit a:hover {
+    background-color: #fff;
+    color: #000;
 }
 .community .news .list {
     width: 804px;
@@ -158,6 +167,10 @@ header .gnb ul li a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.community .news .list ul li a:hover h3 {
+    font-weight: 700;
+    color: #FF8937;
 }
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
@@ -187,6 +200,11 @@ header .gnb ul li a {
     border: 1px solid #fff;
     padding: 9px 33px 9px 33px;
     border-radius: 30px;
+    transition: 0.3s;
+}
+.community .media .tit a:hover {
+    background-color: #fff;
+    color: #000;
 }
 .community .media .list {
     margin: 47px 0 0 0;
@@ -211,6 +229,10 @@ header .gnb ul li a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.community .media .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .community .media .list ul li a h3 {
     font-size: 20px;
@@ -236,4 +258,39 @@ footer {
 footer .wrapper {
     border-top: 1px solid #ccc;
     padding: 45px 0 62px 0;
+    display: flex; /* .inner와 .family_site 좌우배치 */
+    justify-content: space-between;
+}
+footer .inner .f_nav ul {
+    display: flex;
+    gap: 0 44px;
+}
+footer .inner .f_nav ul li a {
+    display: block;
+}
+footer .inner .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .inner .f_info {
+    margin: 23px 0 23px 0;
+}
+footer .inner .f_info .group {
+    display: flex;
+    gap: 0 35px;
+}
+footer .inner .copyright {
+    color: rgba(119, 119, 119, 0.8);
+}
+footer .family_site button {
+    width: 183px;
+    line-height: 44px; /* 높이 대신 행간으로 */
+    border: 1px solid #ccc;
+    color: #1E2124;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 18px;
+}
+footer .family_site button:hover {
+    background-color: #000;
+    color: #fff;
 }
