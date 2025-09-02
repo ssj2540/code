@@ -1,0 +1,41 @@
+@import url(common.css);
+
+header {
+    background-color: #fff;
+    position: absolute; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual .wrapper {
+    position: relative; /* button 정렬의 기준 설정 */
+    height: 800px;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    padding: 329px 0 17px 0;
+}
+.visual button {
+    display: block;
+    width: 190px;
+    height: 190px;
+    background-color: #A5161A;
+    border-radius: 50%; /* 동그라미는 50% */
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: -95px;
+    bottom: -95px;
+}
+body {
+    padding: 0 0 500px 0;
+}
