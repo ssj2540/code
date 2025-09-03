@@ -20,11 +20,10 @@ header .gnb ul {
 }
 header .gnb ul li a {
     font-size: 22px;
-    line-height: 1.4;
+    line-height: 80px;
     letter-spacing: -0.02em;
     color: #000;
-    height: 80px;
-    padding: 26px 25px 23px 25px;
+    padding: 0 25px 0 25px;
     display: block;
 }
 
