@@ -1,0 +1,84 @@
+@import url(common.css);
+@import url(default.css);
+@import url(fonts.css);
+
+header {
+    position: absolute; /* wrap를 기준으로 정렬 */
+    z-index: 100; /* header는 맨 위에 배치 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 110px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+header .wrapper {
+    display: flex; /* logo-gnb-util 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex; /* li 좌우 배치 */
+    justify-content: space-between;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 0 25px 0 25px;
+    line-height: 110px;
+    font-size: 22px;
+}
+header .gnb ul li a:hover {
+    font-weight: 800;
+}
+.visual {
+    border-radius: 0 0 200px 0; /* bg 오른쪽 아래 라운드 */
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+}
+.visual .wrapper {
+    height: 100vh; /* vh(단위) : 현재 브라우저의 넓이, 높이를 100으로 계산하고 퍼센트를 적용함*/
+    min-height: 580px; /* 최소 높이 - 아무리 줄여도 지정한 px만큼은 유지 */
+    position: relative; /* life 정렬의 기준 */
+}
+.visual h2 {
+    padding: 28vh 0 0 0;
+    text-align: center;
+}
+.visual .life {
+    display: block;
+    position: absolute; /* before 정렬의 기준 */
+    right: -94px;
+    bottom: -94px;
+    width: 188px;
+    height: 188px;
+    padding: 81px 0 0 0;
+    border-radius: 50%;
+    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: #2D69FF;
+    color: #fff;
+    text-align: center;
+}
+.visual .life::before {
+    content: "";
+    position: absolute; /* life를 기준으로 정렬 */
+    left: 0;
+    top: 50px;
+    width: 100%; /* 정렬 기준 life 넓이를 기준으로 100% */
+    height: 23px;
+    background: url(../images/life_ico.svg) no-repeat center top;
+}
+/* life 오버 스타일 */
+.visual .life:hover {
+    box-shadow: 4px 4px 7px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #2D69FF;
+    font-weight: 800;
+}
+.visual .life:hover::before {
+    background-image: url(../images/life_ico_over.svg);
+}
+.visual .life strong {
+    font-weight: 800;
+}
+footer {
+    margin: 1000px 0 0 0;
+}
