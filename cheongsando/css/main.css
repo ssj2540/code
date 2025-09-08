@@ -289,7 +289,7 @@ header .util .flow::before {
     display: block; /* none으로 숨긴 요소는 none 빼고 아무 거나 줘도 나타남 / 대부분 block으로 줌 */
 }
 .community {
-    padding: 241px 0 0 0;
+    padding: 298px 0 0 0;
     height: 977px;
     background: url(../images/community_bg.jpg) no-repeat center center / cover; /* bg만 들어갈 경우는 높이, background-color가 들어갈 경우는 padding */
     color: #fff;
@@ -317,15 +317,15 @@ header .util .flow::before {
 }
 .community .inner {
     display: flex; /* notice-service 좌우 배치 */
-    gap: 0 18px;
+    gap: 0 10px;
 }
 .community .inner .notice {
-    padding: 40px 42px 0 40px;
+    padding: 40px 40px 0 40px;
     position: relative; /* more 정렬의 기준 */
     backdrop-filter: blur(8px);
     background-color: rgba(21, 25, 21, 0.5);
     width: 507px;
-    height: 428px;
+    height: 382px;
 }
 .community .inner .notice h3 {
     font-size: 24px;
@@ -374,24 +374,24 @@ header .util .flow::before {
     font-weight: 800;
 }
 .community .inner .service {
-    width: 428px;
+    width: 382px;
 }
 .community .inner .service ul {
     display: flex;
-    gap: 14px 14px;
+    gap: 12px 12px;
     flex-wrap: wrap;
 }
 .community .inner .service ul li {
-    width: calc(50% - 7px);
+    width: calc(50% - 6px);
     /* 100% / 한 줄에 나오는 li의 개수 (2) = 50%
-       한 줄의 여백의 합 14 / 한 줄에 나오는 li의 개수 (2) = 7 */
+       한 줄의 여백의 합 12 / 한 줄에 나오는 li의 개수 (2) = 6 */
 }
 .community .inner .service ul li a {
     display: block;
-    height: 207px;
+    height: 185px;
     backdrop-filter: blur(8px);
     background-color: rgba(21, 25, 21, 0.5);
-    padding: 27px 0 0 27px;
+    padding: 24px 0 0 24px;
     font-size: 24px;
     font-weight: 800;
 }
