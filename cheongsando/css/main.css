@@ -28,7 +28,7 @@ header .gnb ul li a {
     font-size: 22px;
 }
 header .gnb ul li a:hover {
-    font-weight: 800;
+    font-weight: 700;
 }
 header .util {
     display: flex; /* 날씨 좌우배치 */
@@ -241,7 +241,6 @@ header .util .flow::before {
        li는 ul의 15% / 190*100/1260 = 15.07... */
     height: 424px;
 }
-
 .tour .list ul li a {
     display: flex; /* h3-p 하단 정렬 */
     flex-direction: column;
@@ -288,6 +287,7 @@ header .util .flow::before {
 .tour .list ul li.on a p {
     display: block; /* none으로 숨긴 요소는 none 빼고 아무 거나 줘도 나타남 / 대부분 block으로 줌 */
 }
+
 .community {
     padding: 298px 0 0 0;
     height: 977px;
@@ -388,6 +388,7 @@ header .util .flow::before {
 }
 .community .inner .service ul li a {
     display: block;
+    position: relative; /* after 정렬의 기준 */
     height: 185px;
     backdrop-filter: blur(8px);
     background-color: rgba(21, 25, 21, 0.5);
@@ -395,7 +396,199 @@ header .util .flow::before {
     font-size: 24px;
     font-weight: 800;
 }
+.community .inner .service ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 29px;
+    bottom: 28px;
+    width: 38px;
+    height: 38px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.community .inner .service ul li.icon1 a::after{
+    background-image: url(../images/community_service01.svg);
+}
+.community .inner .service ul li.icon2 a::after{
+    background-image: url(../images/community_service02.svg);
+}
+.community .inner .service ul li.icon3 a::after{
+    background-image: url(../images/community_service03.svg);
+}
+.community .inner .service ul li.icon4 a::after{
+    background-image: url(../images/community_service04.svg);
+}
+.community .inner .service ul li a:hover {
+    background-color: #2D69FF;
+}
 
 footer {
-    margin: 1000px 0 0 0;
+    padding: 69px 0 79px 0;
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.7);
+
+}
+footer .wrapper {
+    display: flex; /* left와 right 좌우 배치*/
+    justify-content: space-between;
+}
+footer .left_area .f_nav ul {
+    display: flex; /* li 좌우 배치 */
+    gap: 0 39px;
+}
+footer .left_area .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .left_area .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -22px;
+    top: 4px;
+    width: 1px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .left_area .f_nav ul li:last-child::after { /* 마지막 줄 안 보임 처리 */
+    display: none;
+}
+/* 순서와 상관 없는 건 first 또는 last-child를 써도 무방하지만, 순서가 뚜렷한 건 a태그에 스타일을 줘야함 */
+footer .left_area .f_nav ul li.privacy a { 
+    font-weight: 700;
+}
+footer .left_area .f_nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0%;   /* 줄이 왼쪽에서 오른쪽으로 넓이가 0 -> 100으로 0.3초 동안 늘어남 */
+    /* width: 100%;   줄이 서서히 나타나게 하는 스타일
+       opacity: 0; */ 
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 0.3s;
+}
+footer .left_area .f_nav ul li a:hover::after {
+    width: 100%;
+    /* opacity: 1;*/
+}
+footer .left_area .f_info {
+    display: flex;
+    margin: 22px 0 30px 0;
+    gap: 0 40px;
+}
+footer .left_area .copyright .no {
+    margin: 2px 0 0 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+footer .left_area .copyright .no span {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .left_area .copyright .no span::after {
+    content: "";
+    position: absolute; /* span을 기준으로 정렬 */
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+footer .right_area {
+    display: flex; /* family_site - TOP 좌우 배치 */
+    align-items: flex-start;
+    gap: 0 8px;
+}
+footer .right_area .family_site {
+    position: relative /* family_detail 정렬의 기준 */;
+}
+footer .right_area .family_site button {
+    padding: 0 0 0 16px;
+    position: relative; /* after 정렬의 기준 */
+    width: 174px;
+    height: 49px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    text-align: left;
+}
+footer .right_area .family_site button::after {
+    content: "";
+    position: absolute; /* button을 기준으로 정렬 */
+    right: 17px;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+footer .right_area .family_site button.open::after {
+    background-image: url(../images/family_site_open.svg);
+}
+footer .right_area .family_site button.close::after {
+    background-image: url(../images/family_site_close.svg);
+}
+footer .right_area .family_site button.close {
+    display: none; /* 맨 처음엔 안 보이게 */
+}
+footer .right_area .family_site .family_detail {
+    display: none;
+    padding: 11px 0 11px 16px;
+    position: absolute; /* family_site 기준으로 정렬 */
+    left: 0;
+    bottom: 52px;
+    width: 100%; /* family_site 넓이 기준으로 100% */
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background-color: #000;
+}
+footer .right_area .family_site .family_detail ul li a {
+    display: block;
+    padding: 6px 0 6px 0;
+}
+footer .right_area .family_site .family_detail ul li a:hover {
+    font-weight: 700;
+    color: #fff;
+}
+footer .right_area .family_site .family_detail ul li a span {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .right_area .family_site .family_detail ul li a span::after {
+    content: "";
+    position: absolute; /* span을 기준으로 정렬 */
+    right: -25px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: url(../images/family_blank.svg) no-repeat center center;
+}
+/* family_site가 열렸을 때 - open 클래스가 추가 되었을 때 */
+footer .right_area .family_site.open .family_detail {
+    display: block; /* none으로 숨겼다가 나타났을 때는 아무값 가능 / 보통은 block을 씀 */
+}
+footer .right_area .family_site.open button.close {
+    display: block;
+}
+footer .right_area .family_site.open button {
+    display: none;
+}
+footer .right_area .top {
+    padding: 16px 0 0 0;
+    position: relative;
+    width: 49px;
+    height: 49px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+
+}
+footer .right_area .top::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 100%;
+    height: 16px;
+    background: url(../images/top.svg) no-repeat center center;
+}
+footer .right_area .top:hover {
+    color: #191E26;
+    background-color: #fff;
+}
+footer .right_area .top:hover::before {
+    background-image: url(../images/top_over.svg);
 }
