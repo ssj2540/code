@@ -1,0 +1,101 @@
+@import url(common.css);
+
+.visual {
+    position: relative; /* ctrl_btn 정렬의 기준 */
+}
+.visual .swiper-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/swiper01.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/swiper02.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/swiper03.jpg);
+}
+.visual .swiper-slide h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 339px 0 17px 0;
+}
+.visual .ctrl_btn {
+    display: flex; /* button 좌우 배치 */
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: 0;
+    bottom: 70px;
+    width: 100%;
+    z-index: 1;
+    color: #fff;
+}
+.visual .ctrl_btn button {
+    width: 33px;
+    height: 33px;
+}
+.visual .ctrl_btn .btn_prev,
+.visual .ctrl_btn .btn_next {
+    background: url(../images/swiper_arrow.svg) no-repeat center center;
+}
+.visual .ctrl_btn .btn_next {
+    transform: rotate(180deg);
+}
+.visual .ctrl_btn .paging {
+    margin: 4px 12px 5px 14px;
+    width: auto; /* widht: 100%; 로 들어가있는 속성값을 취소 하기 위해서 */
+    font-weight: 700;
+}
+.visual .ctrl_btn .btn_play {
+    display: none; /* 처음에는 안 나옴 */
+    background: url(../images/swiper_play.svg) no-repeat center center;
+}
+.visual .ctrl_btn .btn_stop {
+    background: url(../images/swiper_stop.svg) no-repeat center center;
+}
+
+.news {
+    margin: 185px 0 100px 0;
+}
+.news .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.news .list {
+    margin: 21px 0 0 0;
+}
+.news .list .swiper-slide a {
+    display: block;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 319px;
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .list .swiper-slide a h3 {
+    /* 2줄 제한 */
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #1d1d1d;
+    margin: 21px 0 21px 0;
+}
+.news .list .swiper-slide a p {
+    /* 3줄 제한 */
+}
