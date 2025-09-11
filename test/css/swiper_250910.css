@@ -64,6 +64,9 @@
 .news {
     margin: 185px 0 100px 0;
 }
+.news .wrapper {
+    position: relative; /* btn_wrap 정렬의 기준 */
+}
 .news .tit h2 {
     font-size: 40px;
     font-weight: 700;
@@ -89,13 +92,63 @@
     transform: scale3d(1.2, 1.2, 1);
 }
 .news .list .swiper-slide a h3 {
-    /* 2줄 제한 */
     font-size: 24px;
     font-weight: 700;
     line-height: 1.4;
     color: #1d1d1d;
     margin: 21px 0 21px 0;
+
+    /* 2줄 제한 */
+    /* 행간 * 줄 수 (1.4 * 2 = 2.8em) 
+       max-height: 는 p태그가 여백에 상관없이 위로 올라올 수 있게 */
+    height: 2.8em;
+    overflow: hidden;
+    line-height: 1.4;
+    
+    /* 줄 수를 제한할 때 맨 뒤 ...을 추가 / 단, 다른 브라우저와의 호환성이 떨어질 수 있음 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 줄 수 */
+    -webkit-box-orient: vertical;
+    word-break: break-all; /* body에서 상속 받은 word-break: keep-all;에서 단어를 나눠서 강제 줄 바꿈 */ 
 }
 .news .list .swiper-slide a p {
     /* 3줄 제한 */
+    line-height: 1.5;
+    height: 4.5em/* 행간 * 줄 수 (1.5 * 3 = 4.85em) */;
+    overflow: hidden;
+
+     /* 줄 수를 제한할 때 맨 뒤 ...을 추가 / 단, 다른 브라우저와의 호환성이 떨어질 수 있음 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 줄 수 */
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.news .btn_wrap {
+    display: flex;
+    gap: 0 15px;
+    position: absolute; /* wrapper을 기준으로 정렬 */
+    right: 0;
+    top: 35px;
+}
+.news .btn_wrap button,
+.news .btn_wrap a {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.news .btn_wrap button {
+    background-image: url(../images/news_arrow.svg);
+}
+.news .btn_wrap button.btn_next {
+    transform: rotate(180deg);
+}
+.news .btn_wrap button.swiper-button-disabled {
+    opacity: 0.5;
+}
+.news .btn_wrap a {
+    background-image: url(../images/news_more.svg);
 }
