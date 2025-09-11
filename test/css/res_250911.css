@@ -1,0 +1,201 @@
+@import url(common.css);
+
+.asia {
+    margin: 153px 0 0 0;
+}
+.asia .wrapper {
+    display: flex; /* tit-photo 좌우 배치 */
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 0 24px;
+}
+.asia .tit h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #191E26;
+    margin: 0 0 17px 0;
+}
+@media screen and (max-width:768px){
+    .asia {
+        margin: 100px 0 0 0;
+    }
+    .asia .wrapper {
+        display: block; /* tit-photo 위아래 배치 */
+        /* flex-direction: row-reverse;
+        align-items: flex-end;
+        gap: 0 24px; 
+        display: flex;가 아니면 적용이 안 되는 속성들 */
+    }
+    .asia .tit h2 {
+        font-size: 22px;
+    }
+    .asia .photo {
+        margin: 34px 0 0 0;
+    }
+    .asia .photo img {
+        width: 100%;
+    }
+} /* @media */
+
+.photo_wrap {
+    margin: 50px 0 0 0;
+}
+.photo_wrap .photo {
+    overflow: hidden;
+    width: 832px;
+    height: 625px;
+}
+.photo_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){
+    .photo_wrap {
+        margin: 30px 0 0 0;
+    }
+    .photo_wrap .photo {
+        overflow: hidden;
+        width: auto;
+        height: 319px;
+    }
+} /* @media */
+
+.mission {
+    margin: 206px 0 100px 0;
+    text-align: center;
+}
+.mission strong {
+    font-weight: 700;
+    line-height: 1.4;
+    color: #191E26;
+}
+.mission h2 {
+    margin: 17px 0 17px 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #191E26;
+}
+.mission h2 br.mo_only {
+    display: none; /* pc버전에선 줄 바꿈 X */
+}
+@media screen and (max-width:768px){
+    .mission {
+        margin: 95px 0 100px 0;
+    }
+    .mission h2 {
+        font-size: 28px;
+    }
+    .mission h2 br.mo_only {
+        display: block; /* pc버전에선 줄 바꿈 X */
+    }
+    .mission h2 br.pc_only {
+        display: none; /* pc버전에선 줄 바꿈 X */
+    }
+    .mission p br{
+        display: none;
+    }
+} /*@media*/
+
+.winner {
+    margin: 206px 0 100px 0;
+}
+.winner .tit strong {
+    font-weight: 700;
+    line-height: 1.4;
+    color: #191E26;
+}
+.winner .tit h2 {
+    margin: 17px 0 0 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #191E26;
+}
+.winner .list {
+    margin: 34px 0 0 0;
+}
+.winner .list .swiper-slide a {
+    display: block;
+}
+.winner .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 225px;
+}
+.winner .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.winner .list .swiper-slide a h3 {
+    margin: 13px 0 0 0;
+    padding: 4px 0 4px 10px;
+    position: relative; /* before 정렬의 기준 */
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #191E26;
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.4s;
+}
+.winner .list .swiper-slide a h3::before {
+    content: "";
+    position: absolute; /* h3 기준으로 정렬 */
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%; /* h3가 overflow: hidden; 이기 때문에 넓이를 100% 줘야함 */
+    background-color: #E7336E;
+    transition: 0.5s;
+}
+.winner .list .swiper-slide a:hover h3 {
+    color: #fff;
+}
+.winner .list .swiper-slide a:hover h3::before {
+    width: 100%;
+}
+@media screen and (max-width:768px){
+    .winner {
+        margin: 95px 0 100px 0;
+    }
+    .winner .tit h2 {
+        font-size: 28px;
+    }
+    .winner .list .swiper-slide {
+        width: 190px;
+    }
+    .winner .list .swiper-slide a h3 {
+        margin: 13px 0 0 0;
+        padding: 4px 0 4px 10px;
+        position: relative; /* before 정렬의 기준 */
+        font-size: 22px;
+        /* 1줄 제한 해제 */
+        white-space: wrap;
+        overflow: visible;
+        text-overflow: ellipsis;
+        transition: 0.4s;
+    }
+    .winner .list .swiper-slide a h3::before {
+        content: "";
+        position: absolute; /* h3 기준으로 정렬 */
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%; /* h3가 overflow: hidden; 이기 때문에 넓이를 100% 줘야함 */
+        background-color: #E7336E;
+        transition: 0.5s;
+    }
+    .winner .list .swiper-slide a:hover h3 {
+        color: #fff;
+    }
+    .winner .list .swiper-slide a:hover h3::before {
+        width: 100%;
+    }
+} /*@media*/

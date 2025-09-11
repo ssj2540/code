@@ -27,7 +27,7 @@
 body {
     font-family: 'PT';
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 500;
     color: #555; /* 컬러 6글자가 똑같으면 3글자만 써도 적용 */
     line-height: 1.5;
     word-break: keep-all; /* 가독성_단어 줄 넘김 방지 */
@@ -80,4 +80,14 @@ button {
     margin: -1px;
     overflow: hidden;
 }
+@media screen and (max-width:768px){
+/* 브라우저 사이즈 768px부터 그 이하의 사이즈에서만 적용 */
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 16px;
+    }
+} /* @media */
 /* 모든 설정 초기화 */
