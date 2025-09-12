@@ -152,12 +152,11 @@ header .util .flow::before {
        한줄의 사이 여백의 합 24*2 = 48 / 한 줄의 li의 개수 = 16 
        calc(33.33% - 16px);*/
     width: calc(33.33% - 16px);
-
 }
 .culture .list ul li a {
     display: block;
 }
-.culture .list ul li a .photo {
+.culture .list ul li a .photo {.
     overflow: hidden;
     height: 272px;
 }
