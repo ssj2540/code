@@ -1,0 +1,19 @@
+/* 모든 페이지에서 중복되는 스타일 */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    /* Noto Sans KR은 뒤에 sans-serif 안 붙어있으면 적용이 안 됨 
+    구글 폰트여서 구글에 있는 css style 복붙해야함*/
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1d1d1d;
+    word-break: keep-all; /* 단어별로 줄 바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    min-width: 1392px; /* 1260 + 94 + 94 = 1392  브라우저의 최소 넓이 */
+    position: relative; /* body를 기준으로 정렬 */
+}
