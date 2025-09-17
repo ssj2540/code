@@ -8,7 +8,7 @@
 .visual .swiper-slide {
     display: flex;
     align-items: flex-end;
-    height: 100vh; /* 브라우저 높이와 동일하게 */
+    height: 100dvh; /* 브라우저 높이와 동일하게 */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
