@@ -2,3 +2,106 @@
 @import url(default.css);
 @import url(fonts.css);
 
+.visual {
+    position: relative; /* btn_wrap 정렬의 기준 */
+}
+.visual .swiper-slide {
+    display: flex;
+    align-items: flex-end;
+    height: 100vh; /* 브라우저 높이와 동일하게 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/visual_bg1.jpg);
+}
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/visual_bg2.jpg);
+}
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/visual_bg3.jpg);
+}
+.visual .swiper-slide h3 {
+    margin: 0 0 13px 0;
+    font-size: 60px;
+}
+.visual .swiper-slide p {
+    margin: 0 0 169px 0;
+}
+.visual .btn_wrap {
+    display: flex;
+    gap: 0 8px;
+    position: absolute;
+    left: calc(50% - 630px); /* 50%(가운데 정렬) - 630px(wrapper 1260px의 절반) 만큼 뺀 위치 */
+    bottom: calc(10% + 13px);
+    z-index: 1;
+}
+.visual .btn_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_wrap button.btn_prev {
+    background-image: url(../images/popup_prev.svg);
+}
+.visual .btn_wrap button.btn_play {
+    background-image: url(../images/popup_play.svg);
+}
+.visual .btn_wrap button.btn_stop {
+    background-image: url(../images/popup_stop.svg);
+}
+.visual .btn_wrap button.btn_next {
+    background-image: url(../images/popup_prev.svg);
+    transform: rotate(180deg);
+}
+@media screen and (max-width:768px){
+        .visual .swiper-slide h3 {
+            margin: 0 0 13px 0;
+            font-size: 44px;
+        }
+        .visual .swiper-slide h3 br {
+            display: no;
+        }
+        .visual .swiper-slide p {
+            margin: 0 0 91px 0;
+        }
+        .visual .btn_wrap {
+            gap: 0 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* btn_wrap 넓이의 절반을 왼쪽으로 이동
+               left: 50%은 정렬의 기준이 되는 .visual의 절반
+               transform: translateX(-50%)는 자기 자신 (.btn_wrap) 넓이 기준으로 절반  */
+            bottom: 20px;
+        }
+        .visual .btn_wrap button {
+            border: 1px solid #fff;
+            border-radius: 50%;
+            width: 37px;
+            height: 37px;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .visual .btn_wrap button.btn_prev {
+            background-image: url(../images/popup_prev.svg);
+        }
+        .visual .btn_wrap button.btn_play {
+            background-image: url(../images/popup_play.svg);
+        }
+        .visual .btn_wrap button.btn_stop {
+            background-image: url(../images/popup_stop.svg);
+        }
+        .visual .btn_wrap button.btn_next {
+            background-image: url(../images/popup_prev.svg);
+            transform: rotate(180deg);
+        }
+    }/*@media*/
+
+footer {
+    margin: 500px 0 0 0;
+}
