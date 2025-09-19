@@ -605,11 +605,13 @@ header .util .lang_open {
     background: url(../images/notice_more2.svg) no-repeat center center;
     transition: 2s;
 }
-
 .webzine .more a:hover::after {
     /* 마우스 오버 시 */
     transform: rotate(360deg);
 }
+@media screen and (max-width:768px){
+    
+}/*media*/
 
 
 footer {
