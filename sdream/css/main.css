@@ -467,7 +467,7 @@ header.fixed .util .lang_open {
             width: calc(100% - 42px); /* tit과 more이 화면이 좁아져도 겹쳐지지 않게 넓이값 줌 */
         }
         .notice .list {
-            margin: 56  px 0 0 0;
+            margin: 56px 0 0 0;
         }
         .notice .list ul li {
             margin: 0 0 16px 0;
