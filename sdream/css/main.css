@@ -14,6 +14,7 @@ header {
     width: 100%;
     height: 90px; /* wrap을 기준으로 정렬 */
     color: #fff;
+    transition: 0.3s;
 }
 header .logo a {
     display: block;
@@ -48,9 +49,27 @@ header .util .lang_open {
 }
 header .util .mypage {
     background-image: url(../images/util_mypage.svg);
+    transition: 0.3s;
 }
 header .util .lang_open {
     background-image: url(../images/util_lang.svg);
+    transition: 0.3s;
+}
+/* header에 fixed 클래스가 추가 되었을 때 */
+header.fixed {
+    position: fixed; /* 무조건 body에 */
+    background-color: #fff;
+    color: #1D1D1D;
+    border-bottom: 1px solid #E4E4E4;
+}
+header.fixed .logo a {
+    background-image: url(../images/logo_b.svg);
+}
+header.fixed .util .mypage {
+    background-image: url(../images/util_mypage_b.svg);
+}
+header.fixed .util .lang_open {
+    background-image: url(../images/util_lang_b.svg);
 }
 @media screen and (max-width:768px){
         header {
@@ -67,12 +86,16 @@ header .util .lang_open {
             width: 56px;
             height: 56px;
             background: url(../images/gnb_open.svg) no-repeat center center;
+            transition: 0.3s;
         }
         header .gnb .gnb_wrap {
             display: none;
         }
         header .util {
             display: none; /* mypage - lang 좌우 배치 */
+        }
+        header.fixed .gnb .gnb_open {
+            background-image: url(../images/gnb_open_b.svg);
         }
 }/*@media*/
 
