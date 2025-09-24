@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>을유문화사</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="">
+            <h1 class="logo"><a href="index.html"><span class="blind">을유문화사</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul>
+                        <li><a href="#n"><span>을유문화사</span></a></li>
+                        <li><a href="#n"><span>콘텐츠</span></a></li>
+                        <li><a href="#n"><span>을유소식</span></a></li>
+                        <li><a href="#n"><span>독자참여</span></a></li>
+                    </ul>
+                </div>
+                <button class="gnb_close"><span>메뉴닫기</span></button>
+            </nav>
+            <div class="util">
+                <a href="#n" class="mypage"><span class="blind">마이페이지</span></a>
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색열기</span></button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide popup1">
+                            <div class="wrapper">
+                                <h3>책으로 세운 <br>건국의 꿈, 문화의 미래</h3>
+                                <p>“출판은 곧 건국 사업”이라는 사명을 바탕으로, <br>문화와 사회, 그리고 겨레에 공헌하는<br class="mobile_only"> 출판의 길을 지향합니다</p>
+                            </div><!--wrapper-->
+                        </li>
+                        <li class="swiper-slide popup2">
+                            <div class="wrapper">
+                                <h3>광복의 정신을 이어 <br>
+                                    출판의 길을 걷다</h3>
+                                <p>1945년 창립 이래 우리말과 문화를 지키며, <br>광복의 정신을 품은 한국 출판의 뿌리를<br class="mobile_only"> 굳건히 세워왔습니다</p>
+                            </div><!--wrapper-->
+                        </li>
+                        <li class="swiper-slide popup3">
+                            <div class="wrapper">
+                                <h3>법고창신의 정신으로 <br>
+                                    새로운 고전을 열다</h3>
+                                <p>‘을유세계문학전집’, ‘을유사상고전’을 통해 <br>과거와 현재를 잇는 지적 성취를 이어가며, <br class="mobile_only">새로운 고전의 길을 엽니다</p>
+                            </div><!--wrapper-->
+                        </li>
+                        <li class="swiper-slide popup4">
+                            <div class="wrapper">
+                                <h3>한국 문학사의 길을 <br class="mobile_only">열고, <br>기록으로 남기다</h3>
+                                <p>『청록집』, 『삼대』, 『임꺽정』을 비롯해 <br>광복 이후 한국 문학사의 결정적 순간을 <br class="mobile_only">책으로 기록해왔습니다</p>
+                            </div><!--wrapper-->
+                        </li>
+                    </ul>
+                </div><!--swiper-->
+                <div class="ctrl_btn">
+                    <!--디자인 순서대로 작성-->
+                    <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                    <div class="paging"></div> <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn_stop"><span class="blind">일시정지</span></button>
+                    <button class="btn_play"><span class="blind">재생버튼</span></button>
+                    <button class="btn_next"><span class="blind">다음버튼</span></button>
+                </div><!--ctrl_btn-->
+            </section><!--visual-->
+            <section class="book">
+                <div class="book_wrap">
+                    <div class="tit">
+                        <h2>오늘의<br>
+                            읽을거리</h2>
+                        <p>을유문화재단의 신간으로 <br>더 풍성한 독서 시간을 즐겨보세요</p>
+                    </div>
+                    <div class="list"></div>
+                </div>
+            </section><!--book-->
+            <section class="interview">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>월간 을터뷰</h2>
+                        <p>책 너머의 이야기, 작가와 나누는 깊은 대화</p>
+                    </div>
+                </div>
+            </section><!--interview-->
+            <section class="story">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>을유 시리즈</h2>
+                        <p>을유문화사가 전하는 일상의 영감들</p>
+                    </div>
+                </div>
+            </section><!--story-->
+        </main>
+        <footer>
+            <button class="top"></button>
+            <div class="wrapper">
+                <div class="slogan"></div><!--slogan-->
+                <div class="f_info"></div><!--f_info-->
+                <div class="copyright"></div><!--copyright-->
+            </div><!--wrapper-->
+        </footer>
+    </div><!--wrap-->
+</body>
+</html>

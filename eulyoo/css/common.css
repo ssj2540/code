@@ -1,0 +1,46 @@
+/* 모든 페이지에서 중복되는 스타일 */
+body {
+    font-family: 'PT', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2B2B2B;
+    word-break: keep-all; /* 단어별로 강제 줄 바꿈 */
+    word-wrap: break-word; /* 단어가 너무 길 때  강제 줄 바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    min-width: 1340px; /* 1260 + 40 + 40 = 1340  브라우저의 최소 넓이 */
+    position: relative; /* header를 기준으로 정렬 */
+}
+/* html 문자 구조상 글자를 써야 하는데, 그 해당 글자를 안 보이게 하고 싶을 때 
+   class="blind"를 주면 가능 (naver에서 따옴) */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0); /* 도형: 네모( ); */
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+@media screen and (max-width:768px){
+/* 모든 페이지에서 중복되는 스타일 */
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        width: auto; /* 모바일로 변경 시 넓이는 알아서 맞추기, 그래야 가로 스크롤바 안 생김 */
+        margin: 0 16px; /* 가운데 정렬 */
+    }
+    #wrap {
+        min-width: 0; /* 최소 넓이 없음 */
+        position: relative; /* body를 기준으로 정렬 */
+    }
+    .tit_gm {
+    font-size: 28px;
+    }
+} /*@media*/
