@@ -36,7 +36,7 @@ section h2 {
     justify-content: space-between;
 }
 .notice .list ul li {
-    width: calc(33% - 12px);
+    width: calc(33.33% - 16px);
 }
 .notice .list ul li a {
     display: block;

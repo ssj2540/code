@@ -1,0 +1,125 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.news {
+    margin: 171px 0 0 0;
+}
+.news .wrapper {
+    position: relative; /* more 기준 */
+}
+.news .tit strong {
+    color: #004EA2;
+}
+.news .tit h2 {
+    margin: 13px 0 0 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.news .list {
+    margin: 46px 0 0 0;
+}
+.news .list ul {
+    display: flex; /* li 좌우 배치 */
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: calc(33.33% - 16px);
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a .photo {
+    height: 250px;
+}
+.news .list ul li a h3 {
+    margin: 14px 0 5px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.news .more {
+    position: absolute; /* wrapper 기준 */
+    right: 0;
+    top: 76px;
+}
+.news .more a {
+    display: block;
+    padding: 0 19px 0 0;
+    color: #004EA2; /* 색깔은 웬만하면 a에 */
+    position: relative;
+}
+.news .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/news_more.svg) no-repeat center center;
+}
+@media screen and (max-width:1024px){
+        .news .tit h2 {
+            font-size: 32px;
+        }
+        .news .list ul li {
+            width: calc(50% - 10px);
+        }
+}/*media*/
+@media screen and (max-width:1024px) and (min-width:769px){
+    .news .list ul li:nth-child(3) {
+        display: none;
+    }
+}/*media*/
+@media screen and (max-width:768px){
+        .news {
+            margin: 97px 0 0 0;
+        }
+        .news .tit h2 {
+            margin: 8px 0 0 0;
+            font-size: 24px;
+        }
+        .news .list ul {
+            display: block; /* flex -> block */
+        }
+        .news .list ul li {
+            width: auto;
+            border-bottom: 1px solid #ededed;
+        }
+        .news .list ul li:first-child {
+            border-top: 1px solid #ededed;
+        }
+        .news .list ul li a {
+            padding: 17px 0 17px 0;
+        }
+        .news .list ul li a .photo {
+            display: none;
+        }
+        .news .list ul li a h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .news .list ul li a p {
+            display: none;
+        }
+        .news .more {
+            margin: 30px 0 0 0;
+            position: relative;
+            right: auto;
+            top: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .news .more a {
+            padding: 4px 38px 5px 22px;
+            border: 1px solid #004EA2;
+            border-radius: 20px;
+        }
+        .news .more a::after {
+            right: 18px;
+            top: 9px;
+        }
+}/*media*/
