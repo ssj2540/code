@@ -36,7 +36,7 @@ section h2 {
     justify-content: space-between;
 }
 .notice .list ul li {
-    width: 404px;
+    width: calc(33% - 12px);
 }
 .notice .list ul li a {
     display: block;
@@ -95,6 +95,7 @@ section h2 {
     .notice .list ul li {
         border-top: 1px solid #EDEDED;
         padding: 3px 0 11px 0;
+        width: auto;
     }
     .notice .list ul li:last-child {
         border-bottom: 1px solid #EDEDED;
