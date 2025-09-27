@@ -1,0 +1,107 @@
+@import url(default.css);
+@import url(fonts.css);
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    /* 도형: 네모( ); */
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", Helvetica, AppleSDGothicNeo, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    color: #111;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+.hd {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #111;
+    width: 100%;
+    background-color: #fff;
+}
+.hd h1 {
+    padding: 12px 68px 11px 68px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.hd .gnb ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hd .gnb ul li {
+    position: relative;
+    text-align: center;
+}
+.hd .gnb ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background-color: #111;
+}
+.hd .gnb ul li {
+    width: 240px;
+}
+.hd .gnb ul li a {
+    display: block;
+    font-weight: 500;
+    line-height: 48px;
+}
+.hd .gnb ul li a span {
+    position: relative;
+}
+.hd .gnb ul li a span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #111;
+    transition: 0.3s;
+}
+.hd .gnb ul li a:hover span::before {
+    width: 100%;
+}
+.hd .util {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.hd .util button {
+    width: 80px;
+    height: 48px;
+    background: url(../images/search.svg) no-repeat center center;
+    border-left: 1px solid #111;
+}
+.hd .util .mypage a,
+.hd .util .basket a {
+    display: block;
+    width: 80px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-left: 1px solid #111;
+}
+.hd .util .mypage a {
+    background-image: url(../images/mypage.svg);
+}
+.hd .util .basket a {
+    background-image: url(../images/basket.svg);
+}
