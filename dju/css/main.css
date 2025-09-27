@@ -80,64 +80,54 @@ section h2 {
     background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.875 5.125H0.75C0.572917 5.125 0.424479 5.0651 0.304688 4.94531C0.184896 4.82552 0.125 4.67708 0.125 4.5C0.125 4.32292 0.184896 4.17448 0.304688 4.05469C0.424479 3.9349 0.572917 3.875 0.75 3.875H3.875V0.75C3.875 0.572917 3.9349 0.424479 4.05469 0.304688C4.17448 0.184896 4.32292 0.125 4.5 0.125C4.67708 0.125 4.82552 0.184896 4.94531 0.304688C5.0651 0.424479 5.125 0.572917 5.125 0.75V3.875H8.25C8.42708 3.875 8.57552 3.9349 8.69531 4.05469C8.8151 4.17448 8.875 4.32292 8.875 4.5C8.875 4.67708 8.8151 4.82552 8.69531 4.94531C8.57552 5.0651 8.42708 5.125 8.25 5.125H5.125V8.25C5.125 8.42708 5.0651 8.57552 4.94531 8.69531C4.82552 8.8151 4.67708 8.875 4.5 8.875C4.32292 8.875 4.17448 8.8151 4.05469 8.69531C3.9349 8.57552 3.875 8.42708 3.875 8.25V5.125Z' fill='%23004EA2'/%3E%3C/svg%3E%0A");
 }
 @media screen and (max-width:768px){
-    .notice {
-        margin: 97px 0 0 0;
-    }
-    .notice .wrapper {
-        position: relative; /* more 정렬 기준 */
-    }
-    .notice .tit h2 {
-        margin: 8px 0 0 0;
-    }
-    .notice .list ul {
-        display: block; /* flex -> block */
-    }
-    .notice .list ul li {
-        border-top: 1px solid #EDEDED;
-        padding: 3px 0 11px 0;
-        width: auto;
-    }
-    .notice .list ul li:last-child {
-        border-bottom: 1px solid #EDEDED;
-    }
-    .notice .list ul li a .photo {
-        display: none;
-    }
-    .notice .list ul li a .txt h3 {
-        font-size: 18px;
-        font-weight: 400;
-        color: #1d1d1d;
-    }
-    .notice .list ul li a .txt p {
-        display: none;
-    }
-    .notice .more {
-        position: absolute; 
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 30px 0 0 0;
-        top: auto;
-        text-align: center;
-    }
-    .notice .more a {
-        display: inline-block;
-        padding: 4px 38px 5px 22px;
-        border: 1px solid #004EA2;
-        border-radius: 20px;
-        position: relative; /* after 정렬 기준 */
-    }
-    .notice .more a::after {
-        content: "";
-        position: absolute; /* a 기준 정렬 */
-        right: 21px;
-        top: 12px;
-        width: 9px;
-        height: 9px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
-        background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.875 5.125H0.75C0.572917 5.125 0.424479 5.0651 0.304688 4.94531C0.184896 4.82552 0.125 4.67708 0.125 4.5C0.125 4.32292 0.184896 4.17448 0.304688 4.05469C0.424479 3.9349 0.572917 3.875 0.75 3.875H3.875V0.75C3.875 0.572917 3.9349 0.424479 4.05469 0.304688C4.17448 0.184896 4.32292 0.125 4.5 0.125C4.67708 0.125 4.82552 0.184896 4.94531 0.304688C5.0651 0.424479 5.125 0.572917 5.125 0.75V3.875H8.25C8.42708 3.875 8.57552 3.9349 8.69531 4.05469C8.8151 4.17448 8.875 4.32292 8.875 4.5C8.875 4.67708 8.8151 4.82552 8.69531 4.94531C8.57552 5.0651 8.42708 5.125 8.25 5.125H5.125V8.25C5.125 8.42708 5.0651 8.57552 4.94531 8.69531C4.82552 8.8151 4.67708 8.875 4.5 8.875C4.32292 8.875 4.17448 8.8151 4.05469 8.69531C3.9349 8.57552 3.875 8.42708 3.875 8.25V5.125Z' fill='%23004EA2'/%3E%3C/svg%3E%0A");
-    }
+        .notice {
+            margin: 97px 0 0 0;
+        }
+        .notice .tit h2 {
+            margin: 8px 0 0 0;
+        }
+        .notice .list ul {
+            display: block; /* flex -> block */
+        }
+        .notice .list ul li {
+            border-top: 1px solid #EDEDED;
+            width: auto;
+        }
+        .notice .list ul li:last-child {
+            border-bottom: 1px solid #EDEDED;
+        }
+        .notice .list ul li a {
+            padding: 17px 0 17px 0;
+        }
+        .notice .list ul li a .photo {
+            display: none;
+        }
+        .notice .list ul li a .txt h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 400;
+            color: #1d1d1d;
+        }
+        .notice .list ul li a .txt p {
+            display: none;
+        }
+        .notice .more {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 0 0;
+            position: relative; /* absolute -> flex */
+            right: auto;
+            top: auto;
+        }
+        .notice .more a {
+            padding: 4px 38px 5px 22px;
+            border: 1px solid #004EA2;
+            border-radius: 20px;
+        }
+        .notice .more a::after {
+            right: 21px;
+            top: 12px;
+        }
 }/*media*/
 
 .university {
@@ -217,27 +207,27 @@ section h2 {
     background-image: url("data:image/svg+xml,%3Csvg width='37' height='33' viewBox='0 0 37 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.6875 32.4374V29.625H36.3124V32.4374H0.6875ZM2.5625 27.0287V15.5625H7.24995V27.0287H2.5625ZM11.613 27.0287V6.1875H16.3004V27.0287H11.613ZM20.6815 27.0287V11.8125H25.3689V27.0287H20.6815ZM29.75 27.0287V0.5625H34.4374V27.0287H29.75Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 @media screen and (max-width:768px){
-    .university {
-        margin: 140px 0 0 0;
-        padding: 102px 0 102px 0;
-    }
-    .university .wrapper {
-        display: block; /* flex -> block 변경 */
-    }
-    .university .tit h2 {
-        margin: 8px 0 0 0;
-    }
-    .university .list {
-        margin: 44px 0 0 0;
-    }
-    .university .list {
-        width: auto;
-    }
-    .university .list ul {
-        gap: 16px 16px;
-    }
-    .university .list ul li {
-        width: calc(50% - 8px);
-        height: 145px;
-    }
+        .university {
+            margin: 140px 0 0 0;
+            padding: 102px 0 102px 0;
+        }
+        .university .wrapper {
+            display: block; /* flex -> block 변경 */
+        }
+        .university .tit h2 {
+            margin: 8px 0 0 0;
+        }
+        .university .list {
+            margin: 44px 0 0 0;
+        }
+        .university .list {
+            width: auto;
+        }
+        .university .list ul {
+            gap: 16px 16px;
+        }
+        .university .list ul li {
+            width: calc(50% - 8px);
+            height: 145px;
+        }
 }/*media
