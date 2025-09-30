@@ -20,7 +20,7 @@ header .logo a {
     display: block;
     width: 152px;
     height: 59px;
-    background: url(../images/logo.svg) no-repeat center center / contain;
+    background: url(../../images/images_sdream/logo.svg) no-repeat center center / contain;
 
 }
 header .gnb .gnb_open,
@@ -61,10 +61,10 @@ header .util .lang_open {
     background-position: center center;
 }
 header .util .mypage {
-    background-image: url(../images/util_mypage.svg);
+    background-image: url(../../images/images_sdream/util_mypage.svg);
 }
 header .util .lang_open {
-    background-image: url(../images/util_lang.svg);
+    background-image: url(../../images/images_sdream/util_lang.svg);
 }
 /* 마우스 오버했을 때 */
 header .gnb .gnb_wrap ul li a:hover::before {
@@ -85,12 +85,12 @@ header .gnb .gnb_wrap ul li a:hover::before {
     color: #fff;
 }
 .visual .swiper-slide.visual01 {
-    background-image: url(../images/visual01.jpg);
+    background-image: url(../../images/images_sdream/visual01.jpg);
 }.visual .swiper-slide.visual02 {
-    background-image: url(../images/visual02.jpg);
+    background-image: url(../../images/images_sdream/visual02.jpg);
 }
 .visual .swiper-slide.visual03 {
-    background-image: url(../images/visual03.jpg);
+    background-image: url(../../images/images_sdream/visual03.jpg);
 }
 .visual .swiper-slide h3 {
     margin: 16px 0 351px 0;
@@ -113,17 +113,17 @@ header .gnb .gnb_wrap ul li a:hover::before {
     background-position: 18px center;
 }
 .visual .btn_wrap button.btn_prev {
-    background-image: url(../images/visual_next.svg);
+    background-image: url(../../images/images_sdream/visual_next.svg);
     transform: rotate(180deg);
 }
 .visual .btn_wrap button.btn_play {
-    background-image: url(../images/visual_play.svg);
+    background-image: url(../../images/images_sdream/visual_play.svg);
 }
 .visual .btn_wrap button.btn_stop {
-    background-image: url(../images/visual_stop.svg);
+    background-image: url(../../images/images_sdream/visual_stop.svg);
 }
 .visual .btn_wrap button.btn_next {
-    background-image: url(../images/visual_next.svg);
+    background-image: url(../../images/images_sdream/visual_next.svg);
 }
 
 
@@ -182,7 +182,7 @@ header .gnb .gnb_wrap ul li a:hover::before {
     top: 36px;
     width: 35px;
     height: 35px;
-    background: url(../images/biz_more.svg) no-repeat center center;
+    background: url(../../images/images_sdream/biz_more.svg) no-repeat center center;
     opacity: 0;
 }
 .biz .list ul li a .photo img {
@@ -289,7 +289,7 @@ header .gnb .gnb_wrap ul li a:hover::before {
     top: 10px;
     width: 15px;
     height: 11px;
-    background: url(../images/notice_more.svg) no-repeat center center;
+    background: url(../../images/images_sdream/notice_more.svg) no-repeat center center;
 }
 /* 마우스 오버 했을 때 */
 .notice .list ul li a:hover .inner h3 {
