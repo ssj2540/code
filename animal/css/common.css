@@ -1,0 +1,82 @@
+/* 모든 페이지에서 중복되는 스타일 */
+:root {
+    --font-size-basic : 17px;
+    --font-size-title : 40px;
+    --font-size-title2 : 28px;
+    --font-weight-basic : 400;
+    --font-weight-bold : 700;
+    --line-height-basic : 1.5;
+    --line-height-title : 1.3;
+    --letter-spacing-title : -0.02em;
+    --color-txt-title : #231F20;
+    --color-txt-basic : #3D3D3D;
+    --color-main : #0F1F2C;
+    --color-pink : #F06F98;
+    --color-pink2 : #F1C2D4;
+    --color-blue : #00B9DA;
+    --color-blue2 : #29BE98;
+    --color-gray : #8695A3;
+    --color-line : #ccc;
+    --color-white : #fff;
+    --color-white80 : rgba(255,255,255,0.8);
+    --color-white40 : rgba(255,255,255,0.4);
+    --color-white30 : rgba(255,255,255,0.3);
+    --header-h : 90px;
+}
+@media screen and (max-width:768px){
+    :root {
+        --font-size-basic : 16px;
+        --font-size-title : 28px;
+        --font-size-title2 : 22px;
+        --header-h : 56px;
+    }
+}
+body {
+    font-family: 'ELandChoice', sans-serif;
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+    color: var(--color-txt-basic);
+    word-break: keep-all; /* 단어별로 강제 줄 바꿈 */
+    word-wrap: break-word; /* 단어가 너무 길 때  강제 줄 바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    position: relative; /* header를 기준으로 정렬 */
+}
+
+/* html 문자 구조상 글자를 써야 하는데, 그 해당 글자를 안 보이게 하고 싶을 때 
+   class="blind"를 주면 가능 (naver에서 따옴) */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0); /* 도형: 네모( ); */
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+/*
+    좌우여백 30px : 1260 + 30 + 30 = 1320px
+    좌우여백 5% : 1260 + (1260*0.05) + (1260*0.05) = 1386
+    좌우여백 3% : 1260 + (1260*0.03) + (1260*0.03) = 1335.6  
+*/
+@media screen and (max-width:1320px){
+    .wrapper {
+        width: auto;
+        margin: 0 30px;
+    }
+} /*@media*/
+@media screen and (max-width:1024px){
+    .wrapper {
+        margin: 0 23px;
+    }
+} /*@media*/
+@media screen and (max-width:768px){
+    .wrapper {
+        margin: 0 16px; /* 가운데 정렬 */
+    }
+} /*@media*/

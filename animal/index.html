@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon2.ico" type="image/x-icon">
+    <!--라이브러리 파일-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>유기동물 보호센터</title>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <div class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide pop1">
+                            <div class="wrapper">
+                                <h3>오늘도 누군가는 <br>
+                                    가족의 품을 그리워합니다</h3>
+                                <p>사진 한 장, 글 한 줄로 주변 사람들에게 알릴 수 있어요</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide pop2">
+                            <div class="wrapper">
+                                <h3>떠돌던 발자국이 <br>
+                                    다시 집으로 향할 수 있도록</h3>
+                                <p>한 사람의 관심이 잃어버린 가족을 다시 만나게 합니다</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide pop3">
+                            <div class="wrapper">
+                                <h3>직접 돌봐주기 어렵다면, <br>
+                                    다른 방법도 있어요</h3>
+                                <p>봉사와 후원으로 유기동물에게 하루의 평안을 선물해주세요</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide pop4">
+                            <div class="wrapper">
+                                <h3>길을 잃은 마음이 <br>
+                                    다시 사랑을 만날 수 있도록</h3>
+                                <p>잃은 마음, 남겨진 마음, 그리고 이어지는 마음들 모두 여기에 있어요</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--swiper-->
+                <div class="btn_wrap">
+                    <div class="paging">
+                        <div class="current">현재팝업번호</div>
+                        <div class="bar"><span></span></div>
+                        <div class="total">전체팝업번호</div>
+                    </div>
+                    <button class="stop">
+                        <span class="blind">일시정지</span>
+                        <i>
+                            <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.86923 11.5595C7.44775 11.5595 7.08694 11.4094 6.7868 11.1093C6.48666 10.8091 6.33659 10.4483 6.33659 10.0269V2.36369C6.33659 1.94221 6.48666 1.58141 6.7868 1.28127C7.08694 0.981125 7.44775 0.831055 7.86923 0.831055C8.2907 0.831055 8.65151 0.981125 8.95165 1.28127C9.25179 1.58141 9.40186 1.94221 9.40186 2.36369V10.0269C9.40186 10.4483 9.25179 10.8091 8.95165 11.1093C8.65151 11.4094 8.2907 11.5595 7.86923 11.5595ZM1.73869 11.5595C1.31721 11.5595 0.956407 11.4094 0.656266 11.1093C0.356125 10.8091 0.206055 10.4483 0.206055 10.0269V2.36369C0.206055 1.94221 0.356125 1.58141 0.656266 1.28127C0.956407 0.981125 1.31721 0.831055 1.73869 0.831055C2.16016 0.831055 2.52097 0.981125 2.82111 1.28127C3.12125 1.58141 3.27132 1.94221 3.27132 2.36369V10.0269C3.27132 10.4483 3.12125 10.8091 2.82111 11.1093C2.52097 11.4094 2.16016 11.5595 1.73869 11.5595Z" fill="white"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <button class="play">
+                        <span class="blind">재생</span>
+                        <i>
+                            <svg viewBox="0 0 8 10" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.49953 5.51042C7.62426 5.42837 7.71854 5.32425 7.78237 5.19806C7.84608 5.07198 7.87793 4.94047 7.87793 4.80352C7.87793 4.66656 7.84608 4.53505 7.78237 4.40898C7.71854 4.28279 7.62426 4.17866 7.49953 4.09661L1.3885 0.211942C1.31855 0.169511 1.24482 0.138391 1.16729 0.118581C1.08989 0.0987718 1.01622 0.0888672 0.946271 0.0888672C0.724331 0.0888672 0.529721 0.167921 0.362441 0.32603C0.195284 0.484261 0.111706 0.683395 0.111706 0.923432V8.6836C0.111706 8.92364 0.195284 9.12277 0.362441 9.28101C0.529721 9.43911 0.724331 9.51817 0.946271 9.51817C1.01622 9.51817 1.08989 9.50826 1.16729 9.48845C1.24482 9.46864 1.31855 9.43752 1.3885 9.39509L7.49953 5.51042Z" fill="white"/>
+                            </svg>
+                                
+                        </i>
+                    </button>
+                </div>
+            </section>
+            <section class="find"></section>
+            <section class="slogan"></section>
+            <section class="adopt"></section>
+            <section class="review"></section>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>

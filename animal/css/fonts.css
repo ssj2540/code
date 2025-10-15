@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'ELandChoice';
+    src: url('../fonts/ELAND_Choice_L.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ELandChoice';
+    src: url('../fonts/ELAND_Choice_M.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ELandChoice';
+    src: url('../fonts/ELAND_Choice_B.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
