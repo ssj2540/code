@@ -1,0 +1,74 @@
+@import url(common.css);
+
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 12px;
+    }
+}
+
+/* btn1 : 글자 크기만 바뀜 */
+.btn1 {
+    margin: 50px 0 50px 0;
+}
+.btn1 button {
+    background-color: #D1C6DB;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    gap: 0 7px;
+    padding: 8px 18px 8px 16px;
+    border-radius: 30px;
+    /* align-items: center; */
+}
+.btn1 button i {
+    display: block;
+    width: 14.17px;
+    margin-top: 1px;
+}
+
+/* 
+    btn2 : 미디어쿼리로 직접 글자 크기 변경해줘야됨
+    em : 여백에 주로 사용
+ */
+.btn2 {
+    margin: 50px 0 50px 0;
+}
+.btn2 button { /* 글자크기 17px */
+    font-size: 25px;
+    background-color: #D1C6DB;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    gap: 0 0.4118em;
+    padding: 0.4706em 1.0588em 0.4706em 0.9412em;
+    border-radius: 1.7647em;
+    /* align-items: center; */
+}
+.btn2 button i {
+    display: block;
+    width: 0.8335em;
+    margin-top: 1px;
+}
+
+/*
+    btn3 : html에 선언된 글자 크기에 기준이 됨 (css에 직접 폰트 사이즈를 줘도 선언이 안 됨)
+    rem : 글자 크기 주로 사용
+*/
+.btn3 {
+    margin: 50px 0 50px 0;
+}
+.btn3 button { /* 글자크기 17px */
+    background-color: #D1C6DB;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    gap: 0 0.4118rem;
+    padding: 0.4706rem 1.0588rem 0.4706rem 0.9412rem;
+    border-radius: 1.7647rem;
+    /* align-items: center; */
+}
+.btn3 button i {
+    display: block;
+    width: 0.8335rem;
+    margin-top: 1px;
+}

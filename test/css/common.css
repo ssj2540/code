@@ -23,6 +23,7 @@
     url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), 
     url(../fonts/Pretendard-ExtraBold.woff) format('woff');
 }
+
 /* body에 기본 글자 스타일 (본문 스타일) 적용 */
 html, body {
     font-family: 'PT';
@@ -97,7 +98,7 @@ button {
     넓이를 px로 고정을 할 지, 가변으로 넓이를 줄지 상관없음.
     계속(태블릿, 모바일) 좌우여백을 16px 적용
     1260 + 16 + 16 = 1292px
-    1260 + 30 + 30 = 1320px
+    1260 + 40 + 40 = 1340px
 
     좌우의 여백을 가변(%)로 적용할 경우,
     1260*0.1(5%+5%=10%) + 1260 = 126 + 1260 = 1386px

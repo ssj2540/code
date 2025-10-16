@@ -16,19 +16,28 @@
     --color-blue : #00B9DA;
     --color-blue2 : #29BE98;
     --color-gray : #8695A3;
-    --color-line : #ccc;
+    --color-line : #ddd;
+    --color-line2 : #fafafa;
     --color-white : #fff;
     --color-white80 : rgba(255,255,255,0.8);
     --color-white40 : rgba(255,255,255,0.4);
     --color-white30 : rgba(255,255,255,0.3);
     --header-h : 90px;
+    --wrapper-m : 30px;
+}
+@media screen and (max-width:1024px){
+    :root {
+        --wrapper-m : 23px;
+    }
 }
 @media screen and (max-width:768px){
     :root {
         --font-size-basic : 16px;
         --font-size-title : 28px;
         --font-size-title2 : 22px;
+        --font-size-title3 : 18px;
         --header-h : 56px;
+        --wrapper-m : 16px;
     }
 }
 body {
@@ -67,16 +76,6 @@ body {
 @media screen and (max-width:1320px){
     .wrapper {
         width: auto;
-        margin: 0 30px;
-    }
-} /*@media*/
-@media screen and (max-width:1024px){
-    .wrapper {
-        margin: 0 23px;
-    }
-} /*@media*/
-@media screen and (max-width:768px){
-    .wrapper {
-        margin: 0 16px; /* 가운데 정렬 */
+        margin: 0 var(--wrapper-m);
     }
 } /*@media*/

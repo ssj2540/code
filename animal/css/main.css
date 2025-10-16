@@ -2,6 +2,175 @@
 @import url(default.css);
 @import url(fonts.css);
 
+header {
+    position: fixed; /* wrap 기준 정렬, menu_mo 정렬 기준 */
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-white);
+    fill: var(--color-white); /* svg 아이콘 색상 */
+    display: flex; /* logo-gnb-util 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wrapper-m);
+}
+header .logo a {
+    display: block;
+    width: 186px;
+    height: 54px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util {
+    display: flex; /* search-mypage 좌우배치 */
+    align-items: center;
+    gap: 0 5px;
+}
+header .util .search .sch_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+header .util .search .sch_open i {
+    display: block;
+    width: 22.22px;
+    margin: 4px 0 0 0;
+}
+header .util .mypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+header .util .mypage i {
+    display: block;
+    width: 25.01px;
+    margin: 4px 0 0 0;
+}
+/****************** 시작 : pc버전 메뉴 ******************/
+@media screen and (min-width:1025px){
+    header .gnb .gnb_open,
+    header .gnb .gnb_wrap .gnb_logo,
+    header .gnb .gnb_wrap .gnb_close {
+        display: none; /* 모바일에서만 보임 */
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /* li 좌우배치 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /* depth2 정렬 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        padding: 0 1.575em;
+        font-size: 20px;
+        line-height: var(--header-h);
+        white-space: nowrap; /* 행간이 높아서 2줄로 나오는 것을 방지 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        position: absolute; /* li 기준 정렬 */
+        left: 50%; /* li 넓이의 중간 */
+        transform: translate(-50%); /* depth2 넓이의 50% */
+        top: var(--header-h);
+        top: calc(var(--header-h) - 1px);
+        background-color: var(--color-white);
+        border-radius: 0 0 20px 20px;
+        border: 1px solid var(--color-line);
+        border-top: 0;
+        min-width: 100%;
+        padding: 26px 30px 31px 30px;
+        display: none; /* 마우스 오버 시 나옴 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 3px 0;
+        white-space: nowrap; /* 줄바꿈 금지 */
+        text-align: center;
+        color: var(--color-txt-basic);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        font-weight: var(--font-weight-bold);
+        color: var(--color-pink);
+    }
+    header.menu_pc {
+        background-color: var(--color-white);
+        color: var(--color-txt-title);
+        fill: var(--color-txt-title);
+        border-bottom: 1px solid var(--color-line);
+    }
+    header.menu_pc .logo a {
+        background-image: url(../images/logo.svg);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: var(--color-pink);
+        font-weight: var(--font-weight-bold);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        display: block;
+    }
+}/*media*/
+@media screen and (min-width:1025px) and (max-width:1280px){
+    /* 1025 이상일 때의 스타일 (1025 ~ 1280에만 적용) - - - 1024 이하부터 모바일 버전 메뉴 */
+    header .logo a {
+        width: 160px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 19px;
+    }
+}/*media*/
+/****************** 끝 : pc버전 메뉴 ******************/
+/****************** 시작 : mobile버전 메뉴 ******************/
+@media screen and (max-width:1024px){
+    header {
+        padding-right: 0;
+        height: clamp(56px, 9vw, 90px); /* 중간값은 최대값이랑 비슷하게 (조금 더 큰게 좋음) */
+    }
+    header .logo a {
+        /* width: 114px;
+        height: 33px; */
+        width: clamp(114px, 18vw, 186px);
+    }
+    header .util {
+        display: none;
+    }
+    header .gnb .gnb_open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: clamp(56px, 9vw, 90px);
+        height: clamp(56px, 9vw, 90px);
+    }
+    header .gnb .gnb_open i {
+        display: block;
+        width: 43%;
+        margin: 9px 0 0 0;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header 기준 정렬 */
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: var(--color-white);
+        color: var(--color-main);
+        fill: var(--color-main);
+    }
+    header .gnb .gnb_wrap .gnb_close {
+        fill: var(--color-txt-title);
+    }
+
+    /* 메뉴가 열렸을 때 */
+    header.menu_mo .gnb .gnb_wrap {
+        display: block;
+    }
+}
+/****************** 끝 : mobile버전 메뉴 ******************/
+
 .visual {
     position: relative; /* btn_wrap 정렬 기준 */
 }
@@ -28,7 +197,7 @@
     background-image: url(../images/visual04.jpg);
 }
 .visual .swiper-slide h3 {
-    font-size: 60px;
+    font-size: clamp(28px, 4vw, 60px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-title);
     letter-spacing: var(--letter-spacing-title);
@@ -67,7 +236,7 @@
     font-weight: var(--font-weight-bold);
 }
 .visual .btn_wrap .paging .bar {
-    width: 151px;
+    width: clamp(62px, 18vw, 151px);
     height: 3px;
     background: var(--color-white30);
     position: relative; /* before 정렬 기준 */
@@ -119,7 +288,6 @@
         height: 700px;
     }
     .visual .swiper-slide h3 {
-        font-size: 28px;
         margin: 0 0 176px 0;
         transform: translate(0, 50px);
     }
@@ -134,14 +302,9 @@
     .visual .btn_wrap .paging {
         gap: 0 8px;
     }
-    .visual .btn_wrap .paging .bar {
-        width: 62px;
-        height: 2px;
-    }
-
 }
 
 
 footer {
-    margin: 500px 0 0 0;
+    margin: 1000px 0 0 0;
 }
