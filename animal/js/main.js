@@ -24,6 +24,7 @@ $(window).resize(function(){ //브라우저가 리사이즈 될때마다 실행
 /******************* 끝 :: 현재 PC버전인지 mobile인지 체크 (메뉴상태) *******************/
 
 /******************* 시작 :: visual swiper *******************/
+
 let visual_time = 5000
 const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -73,6 +74,7 @@ updateCurrent();
 visual_swiper.on('slideChange', function () {
     updateCurrent();
 });
+
 /******************* 끝 :: visual swiper *******************/
 
 /******************* 시작 :: PC버전 메뉴 오버 ******************
@@ -80,21 +82,24 @@ visual_swiper.on('slideChange', function () {
  * header에 menu_pc 클래스 추가
  * 마우스를 오버한 메뉴의 1차 메뉴 li에 over 클래스 추가  (header .gnb .gnb_wrap ul.depth1 > li)
  * -> 오버한 li에만 over클래스 줌
- * --> 모든 li에서 over를 빼고 오버한 li에만 over클래스 줌
+ * ======> 즉, 모든 li에서 over를 빼고 오버한 li에만 over클래스 줌
  * 색상의 영역 내부에선 오버 유저 / 밖에 나갈 때 오버 삭제
  */
 
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
     if(device_status == 'pc'){ //pc일때만 동작
-    // console.log('메뉴오버')
-    $('header').addClass('menu_pc')
-    $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-    $(this).addClass('over')
+        $('header').addClass('menu_pc')
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').hide()
+        $(this).addClass('over')
+        $(this).find('.depth2').slideDown() //2차메뉴 열기
     }
 })
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
-    // console.log('메뉴나감')
-    $(this).removeClass('over')
+    if(device_status == 'pc'){ //pc일때만 동작
+        $(this).removeClass('over')
+        $(this).find('.depth2').hide()
+    }
 })
 $('header').on('mouseleave', function(){
     $(this).removeClass('menu_pc')
@@ -103,6 +108,107 @@ $('header .util .search .sch_open').on('focusin', function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
 })
 
-/******************* 시작 :: PC버전 메뉴 오버 *******************/
+/******************* 끝 :: PC버전 메뉴 오버 *******************/
+
+/******************* 시작 :: mobile버전 메뉴 클릭 ******************
+ * 닫혀있는 메뉴를 클릭하면 기존에 열려있는 메뉴를 닫고 클릭한 자신만 열림 (open 클래스 추가)
+ * 열려있는 메뉴를 클릭하면 자신을 닫음 -- open 클래스가 있으면 열린메뉴 / 없으면 닫힌메뉴
+ * 1차 메뉴를 클릭하면 2차 메뉴가 열림 (링크 이동을 못하게 막음)
+*/
+
+$('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+    if(device_status == 'mobile'){
+        e.preventDefault();
+        if($(this).parent().hasClass('open') == true){
+            $(this).parent().removeClass('open')
+            $(this).next().slideUp() //2차메뉴 슬라이드로 닫기
+        }else{ //열려있지 않은 다른 메뉴를 여는 거
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') //모든 li open 클래스 삭제
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() //모든 2차메뉴 닫기
+            $(this).parent().addClass('open')
+            $(this).next().slideDown() //2차메뉴 슬라이드로 열기
+        }
+    }
+})
+
+/******************* 끝 :: mobile버전 메뉴 클릭 *******************/
+
+/******************* 시작 :: mobile버전 메뉴 열기 ******************
+ * 열기를 클릭하면 header에 menu_mo 클래스 추가 (header .gnb .gnb_open)
+ * 닫기를 클릭하면 header에 menu_mo 클래스 삭제 (header .gnb .gnb_wrap .gnb_close)
+*/
+
+$('header .gnb .gnb_open').on('click', function(){
+    $('header').addClass('menu_mo')
+})
+$('header .gnb .gnb_wrap .gnb_close').on('click', function(){
+    $('header').removeClass('menu_mo')
+})
+/******************* 끝 :: mobile버전 메뉴 닫기 *******************/
+
+/******************* 시작 :: 스크롤 시 header에 fixed 클래스 추가 ******************
+ * 스크롤이 조금이라도 되었을 때 fixed 클래스 추가
+ * 다시 맨 꼭대기로 올라갔을 때 fixed 클래스 삭제
+*/
+
+let scrolling //브라우저가 스크롤 된 값
+
+function scroll_chk(){
+    scrolling = $(window).scrollTop() //현재 스크롤 값
+    if(scrolling > 0){
+        $('header').addClass('fixed')
+    }else{
+        $('header').removeClass('fixed')
+    }
+}
+
+scroll_chk() ////html의 로딩이 완료된 이후 단 1번 실행
+$(window).scroll(function(){
+    scroll_chk() // 스크롤 될 때마다 1번씩
+})
+
+/******************* 끝 :: 스크롤 시 header에 fixed 클래스 추가 *******************/
+
+/******************* 시작 :: 찾습니다 swiper *******************/
+
+const find1_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+	navigation: {
+		nextEl: '.find .item1 .next',
+		prevEl: '.find .item1 .prev',
+	},
+
+});
+
+const find2_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+	navigation: {
+		nextEl: '.find .item2 .next',
+		prevEl: '.find .item2 .prev',
+	},
+
+});
+
+/******************* 끝 :: 찾습니다 swiper *******************/
 
 }) //ready

@@ -37,7 +37,7 @@ header .util .search .sch_open {
 header .util .search .sch_open i {
     display: block;
     width: 22.22px;
-    margin: 4px 0 0 0;
+    vertical-align: bottom;
 }
 header .util .mypage {
     display: flex;
@@ -49,8 +49,20 @@ header .util .mypage {
 header .util .mypage i {
     display: block;
     width: 25.01px;
-    margin: 4px 0 0 0;
+    vertical-align: bottom;
 }
+
+/* header가 fixed 되었을 때 */
+header.fixed {
+    background-color: var(--color-white);
+    color: var(--color-txt-title);
+    fill: var(--color-txt-title);
+    border-bottom: 1px solid var(--color-line);
+    }
+header.fixed .logo a {
+    background-image: url(../images/logo.svg);
+}
+
 /****************** 시작 : pc버전 메뉴 ******************/
 @media screen and (min-width:1025px){
     header .gnb .gnb_open,
@@ -67,7 +79,7 @@ header .util .mypage i {
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
         padding: 0 1.575em;
-        font-size: 20px;
+        font-size: var(--font-size-title3);
         line-height: var(--header-h);
         white-space: nowrap; /* 행간이 높아서 2줄로 나오는 것을 방지 */
     }
@@ -110,7 +122,7 @@ header .util .mypage i {
         font-weight: var(--font-weight-bold);
     }
     header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
-        display: block;
+        /* display: block !important; */
     }
 }/*media*/
 @media screen and (min-width:1025px) and (max-width:1280px){
@@ -127,7 +139,7 @@ header .util .mypage i {
 @media screen and (max-width:1024px){
     header {
         padding-right: 0;
-        height: clamp(56px, 9vw, 90px); /* 중간값은 최대값이랑 비슷하게 (조금 더 큰게 좋음) */
+        height: var(--header-var); /* 중간값은 최대값이랑 비슷하게 (조금 더 큰게 좋음) */
     }
     header .logo a {
         /* width: 114px;
@@ -141,33 +153,97 @@ header .util .mypage i {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: clamp(56px, 9vw, 90px);
-        height: clamp(56px, 9vw, 90px);
+        width: var(--header-var);
+        height: var(--header-var);
     }
     header .gnb .gnb_open i {
         display: block;
         width: 43%;
-        margin: 9px 0 0 0;
+        margin: 5px 0 0 0;
     }
     header .gnb .gnb_wrap {
-        display: none;
+        /* display: none; */
         position: absolute; /* header 기준 정렬 */
-        right: 0;
+        right: -100%;
         top: 0;
         width: 100%;
         height: 100dvh;
         background-color: var(--color-white);
         color: var(--color-main);
         fill: var(--color-main);
+        transition: right 0.5s;
     }
-    header .gnb .gnb_wrap .gnb_close {
-        fill: var(--color-txt-title);
-    }
-
     /* 메뉴가 열렸을 때 */
     header.menu_mo .gnb .gnb_wrap {
-        display: block;
+        /* display: block; */
+        right: 0;
     }
+    header .gnb .gnb_wrap ul.depth1 {
+        margin: var(--header-var) 0 0 0;
+        height: calc(100dvh - var(--header-var));
+        overflow-y: auto; /* 주어진 높이보다 컨텐츠가 짧으면 스크롤바x, 길면 스크롤바가 생김 */
+        padding: 13px 0 0 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-size: 20px;
+        line-height: var(--line-height-title);
+        padding: 17px 50px 17px var(--wrapper-m);
+        position: relative; /* after 정렬 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a::after {
+        content: "";
+        position: absolute; /* a 기준 정렬 */
+        right: var(--wrapper-m);
+        top: 50%; /* a 넓이의 중간 */
+        transform: translateY(-50%); /* after 넓이의 50% */
+        width: 23px;
+        height: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='%230F1F2C' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99973 6.38573L12.7864 0.599289C12.8969 0.488664 13.029 0.434039 13.1829 0.435414C13.3368 0.436914 13.469 0.492976 13.5795 0.603601C13.6901 0.714101 13.7454 0.846289 13.7454 1.00016C13.7454 1.15404 13.6901 1.28623 13.5795 1.39673L7.85211 7.1286C7.73098 7.24973 7.59592 7.33816 7.44692 7.39391C7.2978 7.44966 7.14873 7.47754 6.99973 7.47754C6.85073 7.47754 6.70167 7.44966 6.55255 7.39391C6.40355 7.33816 6.26848 7.24973 6.14736 7.1286L0.41567 1.39673C0.305045 1.28623 0.250483 1.15329 0.251983 0.997914C0.253358 0.842664 0.309359 0.709789 0.419984 0.599289C0.530484 0.488664 0.66267 0.433352 0.816545 0.433352C0.97042 0.433352 1.10261 0.488664 1.21311 0.599289L6.99973 6.38573Z' /%3E%3C/svg%3E%0A");
+        transition: 0.3s;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+        transform: translateY(-50%) rotate(180deg); /* after에 이미 translate가 있기 때문에 바로 rotate 주면 에러남 */
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='%23F06F98' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99973 6.38573L12.7864 0.599289C12.8969 0.488664 13.029 0.434039 13.1829 0.435414C13.3368 0.436914 13.469 0.492976 13.5795 0.603601C13.6901 0.714101 13.7454 0.846289 13.7454 1.00016C13.7454 1.15404 13.6901 1.28623 13.5795 1.39673L7.85211 7.1286C7.73098 7.24973 7.59592 7.33816 7.44692 7.39391C7.2978 7.44966 7.14873 7.47754 6.99973 7.47754C6.85073 7.47754 6.70167 7.44966 6.55255 7.39391C6.40355 7.33816 6.26848 7.24973 6.14736 7.1286L0.41567 1.39673C0.305045 1.28623 0.250483 1.15329 0.251983 0.997914C0.253358 0.842664 0.309359 0.709789 0.419984 0.599289C0.530484 0.488664 0.66267 0.433352 0.816545 0.433352C0.97042 0.433352 1.10261 0.488664 1.21311 0.599289L6.99973 6.38573Z' /%3E%3C/svg%3E%0A");
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        background-color: var(--color-line2);
+        padding: 16px var(--wrapper-m) 16px var(--wrapper-m);
+        color: var(--color-txt-basic);
+        display: none; /* 1차 메뉴를 클릭했을 때 나옴 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 5px 0 4px 14px;
+    }
+    header .gnb .gnb_wrap .gnb_logo {
+        position: absolute; /* gnb_wrap 기준 정렬 */
+        left: var(--wrapper-m);
+        top: 0;
+        width: clamp(114px, 18vw, 186px);
+        height: var(--header-var);
+        background: url(../images/logo.svg) no-repeat center center / contain;
+    }
+    header .gnb .gnb_wrap .gnb_close {
+        position: absolute; /* gnb_wrap 기준 정렬 */
+        right: 0;
+        top: 0;
+        width: var(--header-var);
+        height: var(--header-var);
+        display: flex; /* i 태그 가운데 */
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_wrap .gnb_close i {
+        display: block;
+        width: 32.10%;
+        fill: var(--color-txt-title);
+        margin: 5px 0 0 0;
+    }
+
 }
 /****************** 끝 : mobile버전 메뉴 ******************/
 
@@ -200,7 +276,6 @@ header .util .mypage i {
     font-size: clamp(28px, 4vw, 60px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-title);
-    letter-spacing: var(--letter-spacing-title);
     margin: 0 0 18px 0;
     /* 글자가 나타나는 효과 */
     transition: transform 0.8s, opacity 1s;
@@ -253,7 +328,7 @@ header .util .mypage i {
 .visual .btn_wrap .play {
     width: 38px;
     height: 38px;
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: var(--color-white40);
     display: flex; /* i 가운데 배치 */
     align-items: center;
@@ -266,7 +341,7 @@ header .util .mypage i {
 .visual .btn_wrap .stop i {
     display: block;
     width: 10px;
-    margin-top: 2px;
+    vertical-align: bottom;
 }
 .visual .btn_wrap .play i {
     display: block;
@@ -304,6 +379,102 @@ header .util .mypage i {
     }
 }
 
+.find {
+    background-color: var(--color-main);
+    color: var(--color-white);
+    padding: 150px 0 100px 0;
+}
+.find h2 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    text-align: center;
+}
+.find .tab_list {
+    margin: 33px 0 0 0;
+}
+.find .tab_list ul {
+    display: flex; /* li 좌우배치 */
+    justify-content: center;
+    gap: 0 35px;
+}
+.find .tab_list ul li button {
+    display: block;
+    padding: 23px 52px 21px 52px;
+    border-radius: 60px;
+    border: 1px solid var(--color-gray);
+    color: var(--color-white80);
+    font-size: var(--font-size-title2);
+    font-weight: var(--font-weight-bold);
+}
+.find .tab_list ul li.active button {
+    border-color: var(--color-main);
+    background-color: var(--color-pink);
+    color: var(--color-white);
+}
+.find .tab_list ul li.item2.active button {
+    background-color: var(--color-blue);
+}
+.find .tab_content {
+    margin: 27px 0 0 0;
+}
+.find .tab_content .tab_item {
+    position: relative; /* prev, next 정렬 기준 */
+}
+.find .tab_content .tab_item .prev {
+    position: absolute;
+    z-index: 10;
+    left: -25px;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-white40);
+    border-radius: 10px;
+    fill: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.find .tab_content .tab_item .next {
+    position: absolute;
+    z-index: 10;
+    right: -25px;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-white40);
+    border-radius: 10px;
+    fill: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.find .tab_content .tab_item .prev i,
+.find .tab_content .tab_item .next i {
+    display: block;
+    width: 13.23px;
+    vertical-align: bottom;
+}
+.find .tab_content .more {
+    margin: 74px 0 0 0;
+    display: flex;
+    justify-content: center;
+    
+}
+.find .tab_content .more a {
+    display: flex;
+    gap: 0 16px;
+    padding: 13px 21px 11px 21px;
+    border: 1px solid var(--color-gray);
+    border-radius: 10px;
+    color: var(--color-white80);
+    fill: var(--color-white80);
+}
+.find .tab_content .more i {
+    display: block;
+    width: 13px;
+    vertical-align: bottom;
+}
 
 footer {
     margin: 1000px 0 0 0;
