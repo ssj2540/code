@@ -57,6 +57,7 @@ body {
 }
 #wrap {
     position: relative; /* header를 기준으로 정렬 */
+    overflow: hidden;
 }
 
 /* html 문자 구조상 글자를 써야 하는데, 그 해당 글자를 안 보이게 하고 싶을 때 
