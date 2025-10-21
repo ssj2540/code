@@ -588,6 +588,12 @@ header.fixed .logo a {
     display: block;
     width: 13px;
 }
+@media screen and (max-width:1024px){
+    .find .tab_content .tab_item .prev,
+    .find .tab_content .tab_item .next {
+        display: none; /* 모바일 숨김 */
+    }
+}
 @media screen and (max-width:768px){
     .find .tab_list ul {
         gap: 0 3px;
@@ -620,13 +626,10 @@ header.fixed .logo a {
         display: flex; /* strong-span 좌우배치 */
         gap: 0 9px;
     }
-    .find .tab_content .tab_item .prev,
-    .find .tab_content .tab_item .next {
-        display: none; /* 모바일 숨김 */
-    }
     .find .tab_content .more a {
         gap: 0 7px;
-        padding: 8px 18px 8px 18px;
+        padding: 0 18px 0 18px;
+        height: 42px;
         border-radius: 8px;
     }
     .find .tab_content .more a span {
@@ -694,7 +697,7 @@ header.fixed .logo a {
 }
 .slogan p {
     margin: 41px 0 0 0;
-    color: var(--color-gray);
+    color: var(--color-gray2);
 }
 @media screen and (max-width:768px){
     .slogan h2 br.mo_only {
@@ -794,7 +797,7 @@ header.fixed .logo a {
 .adopt .btn_wrap {
     display: flex;
     justify-content: center;
-    margin: clamp(47px, 8.5vw, 112px);
+    margin: clamp(47px, 8.5vw, 112px) 0 0 0;
 }
 .adopt .btn_wrap .prev,
 .adopt .btn_wrap .next {
@@ -840,7 +843,7 @@ header.fixed .logo a {
     content: "";
     position: absolute; /* a 기준 정렬 */
     z-index: -1;
-    left: 0;
+    left: 0 ;
     top: 0;
     width: 0;
     height: 100%;
@@ -910,13 +913,271 @@ header.fixed .logo a {
         margin-left: 0;
     }
     .adopt .btn_wrap .more a i svg {
+        width: 12px;
+    }
+}/*media*/
+
+.review {
+    margin: 169px 0 100px 0;
+}
+.review .wrapper {
+    position: relative; /* prev, next, more 정렬 기준 */
+}
+.review .mo_only {
+    display: none;
+}
+.review h2 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    color: var(--color-txt-title);
+    position: relative; /* before 정렬 기준 */
+    padding: 0 0 27px 0;
+}
+.review h2::before {
+    content: "";
+    position: absolute; /* h2 기준 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw; /*  */
+    height: 1px;
+    background-color: var(--color-line);
+}
+.review h2 span {
+    position: relative; /* before 정렬 기준 */
+}
+.review h2 span::before {
+    content: "";
+    position: absolute; /* span 기준 정렬 */
+    left: 0;
+    bottom: -30px;
+    width: 148px;
+    height: 3px;
+    background-color: var(--color-pink);
+}
+.review .list {
+    margin: clamp(30px, 4.5vw, 60px) 0 0 0;
+}
+.review .list .swiper-slide {
+    width: 269px;
+}
+.review .list .swiper-slide a {
+    display: block;
+}
+.review .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 379px;
+}
+.review .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 잘리지 않고 모두 나옴 */
+    transition: 0.3s;
+}
+.review .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.review .list .swiper-slide a h3 {
+    margin: clamp(17px, 1.6vw, 21px) 0 clamp(8px, 1.3vw, 17px) 0;
+    font-size: var(--font-size-title2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    color: var(--color-txt-title);
+    /* 한줄 제한 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.review .list .swiper-slide a p {
+    /* 두줄 제한 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em;
+    /* 브라우저 호환성이 낮을 수도 있음 - 뒤에 ... 붙이고 싶으면 사용
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;  */
+}
+.review .list .swiper-slide a .date {
+    display: flex;
+    gap: 0 24px;
+    margin: 27px 0 0 0;
+}
+.review .list .swiper-slide a .date strong {
+    color: var(--color-blue);
+    position: relative; /* after 정렬 기준 */
+}
+.review .list .swiper-slide a .date strong::after {
+    content: "";
+    position: absolute; /* strong 기준 정렬 */
+    left: 40px;
+    top: 4px;
+    width: 1px;
+    height: 14px;
+    background-color: var(--color-line);
+}
+.review .prev,
+.review .next {
+    position: absolute; /* wrapper 기준 정렬 */
+    z-index: 1;
+    left: -25px;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    fill: var(--color-pink);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review .next {
+    left: auto;
+    right: -25px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+.review .prev i svg,
+.review .next i svg {
+    display: block;
+    width: 13.23px;
+}
+.review .more.pc {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+.review .more.mobile {
+    display: none;
+}
+.review .more.pc a {
+    display: flex;
+    align-items: center;
+}
+.review .more.pc a strong {
+    font-size: clamp(28px, 4vw, 60px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    color: var(--color-pink);
+}
+.review .more.pc a span {
+    font-weight: var(--font-weight-bold);
+    margin: 0 9px 0 13px;
+}
+.review .more a i svg {
+    display: block;
+    width: 18.42px;
+}
+@media screen and (max-width:1024px){
+    .review {
+        margin: 81px 0 77px 0;
+    }
+    .review .mo_only {
         display: block;
+        margin: 0 0 8px 0;
+        font-size: clamp(14px, 1.5vw, 16px);
+    }
+    .review .mo_only span {
+        font-size: clamp(16px, 2vw, 22px);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-pink);
+    }
+    .review .prev,
+    .review .next {
+        display: none;
+    }
+    .review .more.pc {
+        display: none;
+    }
+    .review .more.mobile {
+        display: flex;
+        justify-content: center;
+        margin: 47px 0 0 0;
+    }
+    .review .more.mobile a {
+        display: flex;
+        align-items: center;
+        gap: 0 5px;
+        padding: 0 18px 0 18px;
+        height: 42px;
+        border: 1px solid var(--color-pink);
+        border-radius: 8px;
+    }
+    .review .more a i svg {
         width: 13px;
-        position: relative;
-        z-index: 10;
     }
 }/*media*/
 
 footer {
-    margin: 1000px 0 0 0;
+    background-color: var(--color-line2);
+    padding: 90px 0 110px 0;
+    color: var(--color-gray2);
 }
+footer .wrapper {
+    position: relative; /* top 정렬 기준 */
+}
+footer .top {
+    position: absolute; /* wrapper 기준 정렬 */
+    right: 0;
+    top: -90px;
+    width: 69px;
+    height: 69px;
+    background-color: var(--color-pink2);
+    fill: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .top i svg {
+    display: block;
+    width: 24.57px;
+}
+footer .f_nav {
+    margin-right: 80px;
+}
+footer .f_nav ul {
+    display: flex; /* li 좌우배치 */
+    flex-wrap: wrap; /* 모바일에서 여러줄 */
+    gap: 0.375em 2.7059em;
+}
+footer .f_nav ul li {
+    position: relative;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1.4em;
+    top: 0.2941em;
+    width: 1px;
+    height: 0.8235em;
+    background-color: var(--color-line);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_info {
+    margin: clamp(19px, 2vw, 28px) 0 clamp(19px, 2.5vw, 34px) 0;
+}
+footer .f_info span,
+footer .f_info address {
+    display: inline-block;
+    margin: 0 1.7647em 0 0;
+}
+@media screen and (max-width:768px){
+    footer {
+        padding: 72px 0 76px 0;
+    }
+    footer .top {
+        top: -72px;
+        width: 56px;
+        height: 56px;
+    }
+    footer .top i svg {
+        width: 22.77px;
+    }
+}/*media*/

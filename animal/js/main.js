@@ -1,7 +1,6 @@
 $(document).ready(function (){
 
-/******************* 시작 :: 현재 PC버전인지 mobile인지 체크 (메뉴상태) *******************/
-    
+/******************* 시작 :: 현재 PC버전인지 mobile인지 체크 (메뉴상태) *******************/  
 let mobile_size = 1024
 let window_w
 let device_status // pc, mobile
@@ -20,11 +19,9 @@ device_chk() //html의 로딩이 완료된 이후 단 1번 실행
 $(window).resize(function(){ //브라우저가 리사이즈 될때마다 실행
     device_chk()
 })
-
 /******************* 끝 :: 현재 PC버전인지 mobile인지 체크 (메뉴상태) *******************/
 
 /******************* 시작 :: visual swiper *******************/
-
 let visual_time = 5000
 const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -74,7 +71,6 @@ updateCurrent();
 visual_swiper.on('slideChange', function () {
     updateCurrent();
 });
-
 /******************* 끝 :: visual swiper *******************/
 
 /******************* 시작 :: PC버전 메뉴 오버 ******************
@@ -85,7 +81,6 @@ visual_swiper.on('slideChange', function () {
  * ======> 즉, 모든 li에서 over를 빼고 오버한 li에만 over클래스 줌
  * 색상의 영역 내부에선 오버 유저 / 밖에 나갈 때 오버 삭제
  */
-
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
     if(device_status == 'pc'){ //pc일때만 동작
         $('header').addClass('menu_pc')
@@ -107,7 +102,6 @@ $('header').on('mouseleave', function(){
 $('header .util .search .sch_open').on('focusin', function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
 })
-
 /******************* 끝 :: PC버전 메뉴 오버 *******************/
 
 /******************* 시작 :: mobile버전 메뉴 클릭 ******************
@@ -115,7 +109,6 @@ $('header .util .search .sch_open').on('focusin', function(){
  * 열려있는 메뉴를 클릭하면 자신을 닫음 -- open 클래스가 있으면 열린메뉴 / 없으면 닫힌메뉴
  * 1차 메뉴를 클릭하면 2차 메뉴가 열림 (링크 이동을 못하게 막음)
 */
-
 $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
     if(device_status == 'mobile'){
         e.preventDefault();
@@ -130,14 +123,12 @@ $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
         }
     }
 })
-
 /******************* 끝 :: mobile버전 메뉴 클릭 *******************/
 
 /******************* 시작 :: mobile버전 메뉴 열기 ******************
  * 열기를 클릭하면 header에 menu_mo 클래스 추가 (header .gnb .gnb_open)
  * 닫기를 클릭하면 header에 menu_mo 클래스 삭제 (header .gnb .gnb_wrap .gnb_close)
 */
-
 $('header .gnb .gnb_open').on('click', function(){
     $('header').addClass('menu_mo')
 })
@@ -150,7 +141,6 @@ $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
  * 스크롤이 조금이라도 되었을 때 fixed 클래스 추가
  * 다시 맨 꼭대기로 올라갔을 때 fixed 클래스 삭제
 */
-
 let scrolling //브라우저가 스크롤 된 값
 
 function scroll_chk(){
@@ -166,11 +156,9 @@ scroll_chk() ////html의 로딩이 완료된 이후 단 1번 실행
 $(window).scroll(function(){
     scroll_chk() // 스크롤 될 때마다 1번씩
 })
-
 /******************* 끝 :: 스크롤 시 header에 fixed 클래스 추가 *******************/
 
 /******************* 시작 :: 찾습니다 swiper *******************/
-
 const find1_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
 	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
@@ -216,14 +204,13 @@ const find2_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는
 	},
 
 });
-
 /******************* 끝 :: 찾습니다 swiper *******************/
+
 /******************* 시작 :: 찾습니다 tab ******************
  * .find .tab_list ul li 중 클릭한 li에 active 클래스 줌 (item1, item2 둘 중 하나)
  * li에서 어떤 tab_item을 보이게 해야하는지 <단서>를 줌
  * .find .tab_content .tab_item 에서 해당 콘텐츠에 active 클래스 줌
 */
-
 let tab_name
 $('.find .tab_list ul li').on('click', function(){
     //클릭한 li에만 active 클래스 추가
@@ -245,25 +232,70 @@ $('.find .tab_list ul li').on('click', function(){
     $('.find .tab_content .tab_item').attr('title', '')
     $('.find .tab_content').find('.' + tab_name).attr('title', '선택됨')
 })
-
 /******************* 끝 :: 찾습니다 tab *******************/
+
 /******************* 시작 :: 입양 swiper *******************/
-    const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 30, /* 팝업과 팝업 사이 여백 */
-        centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-        breakpoints: {
-            769: {    /* 640px 이상일때 적용 */
-                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-                spaceBetween: 36,
-            },
+const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 30, /* 팝업과 팝업 사이 여백 */
+    centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+    breakpoints: {
+        769: {    /* 640px 이상일때 적용 */
+            slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 36,
         },
-        
-        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-        navigation: {
-            nextEl: '.adopt .next',
-            prevEl: '.adopt .prev',
-        },
-    });
+    },
+    
+    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    navigation: {
+        nextEl: '.adopt .next',
+        prevEl: '.adopt .prev',
+    },
+});
 /******************* 끝 :: 입양 swiper *******************/
+
+/******************* 시작 :: 후기 swiper *******************/
+const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    breakpoints: {
+        550: {    /* 640px 이상일때 적용 */
+            slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 16,
+        },
+        769: {    /* 640px 이상일때 적용 */
+            slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 24,
+        },
+        1025: {    /* 640px 이상일때 적용 */
+            slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            spaceBetween: 24,
+        },
+    },
+    //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    navigation: {
+        nextEl: '.review .next',
+        prevEl: '.review .prev',
+    },
+});
+/******************* 끝 :: 후기 swiper *******************/
+
+/******************* 시작 :: TOP 버튼 *******************/
+$('footer .top').on('click', function(){
+    // console.log('top 누름')
+    // $(window).scrollTop(0)
+    $('html, body').animate({
+        scrollTop : 0
+    }, 500)
+})
+/******************* 끝 :: TOP 버튼 *******************/
+
+/******************* 시작 :: 애니메이션 효과 -- 사이트 완성 후 마지막에 줌 *******************/
+AOS.init({
+    offset: 150, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+    duration: 500, // 애니메이션 효과가 작동되는 시간
+    easing: 'ease', // 가속도
+    });
+/******************* 끝 :: 애니메이션 효과 *******************/
 }) //ready
