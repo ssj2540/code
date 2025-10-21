@@ -1017,6 +1017,13 @@ header.fixed .logo a {
     height: 14px;
     background-color: var(--color-line);
 }
+.review button {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.review button:hover {
+    opacity: 1;
+}
 .review .prev,
 .review .next {
     position: absolute; /* wrapper 기준 정렬 */
@@ -1029,7 +1036,6 @@ header.fixed .logo a {
     background-color: var(--color-white);
     fill: var(--color-pink);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    opacity: 0.8;
 
     display: flex;
     justify-content: center;
