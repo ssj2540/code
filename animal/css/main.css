@@ -18,8 +18,8 @@ header {
 }
 header .logo a {
     display: block;
-    width: 186px;
-    height: 54px;
+    width: 167.18px;
+    height: 57.81px;
     background: url(../images/logo_w.svg) no-repeat center center / contain;
 }
 header .util {
@@ -142,7 +142,7 @@ header.fixed .logo a {
     header .logo a {
         /* width: 114px;
         height: 33px; */
-        width: clamp(114px, 18vw, 186px);
+        width: clamp(104px, 16vw, 167.18px);
     }
     header .util {
         display: none;
