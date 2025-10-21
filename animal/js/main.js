@@ -87,7 +87,7 @@ $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
         $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').hide()
         $(this).addClass('over')
-        $(this).find('.depth2').slideDown() //2차메뉴 열기
+        $(this).find('.depth2').show() //2차메뉴 열기
     }
 })
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
