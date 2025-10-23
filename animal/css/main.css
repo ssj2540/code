@@ -85,7 +85,6 @@ header.fixed .logo a {
         position: absolute; /* li 기준 정렬 */
         left: 50%; /* li 넓이의 중간 */
         transform: translate(-50%); /* depth2 넓이의 50% */
-        top: var(--header-h);
         top: calc(var(--header-h) - 1px);
         background-color: var(--color-white);
         border-radius: 0 0 20px 20px;
