@@ -5,12 +5,14 @@
     --color-main : #C11920;
     --color-dark : #111;
     --color-gray : #EDEDED;
+    --color-gray2 : #fafafa;
     --color-white : #fff;
     --header-h : 100px;
     --wrapper-m : 50px;
 }
 @media screen and (max-width:1024px){
     :root {
+        --header-h : 70px;
         --wrapper-m : 30px;
     }
 }

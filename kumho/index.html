@@ -8,73 +8,79 @@
     <script src="js/slick.min.js"></script>
     <link rel="stylesheet" href="css/slick.css">
     <!--내부 라이브러리-->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>금호건설</title>
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!-- pc버전 메뉴에 마우스 오버 = header에 menu_pc
+             모바일에서 메뉴 클릭 = header에 menu_mo
+             header 상단 고정 fixed 클래스 추가
+             스크롤을 아래에서 내리고 올라갈 때는 up 클래스 추가-->
+        <header class="">
             <h1 class="logo"><a href="index.html"><span class="blind">금호건설</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span>메뉴 열기</span></button>
+                <button class="gnb_open"><span class="blind">메뉴 열기</span></button>
                 <div class="gnb_wrap">
-                    <div class="gnb_logo"><span>금호건설</span></div>
+                    <div class="gnb_logo"><span class="blind">금호건설</span></div>
                     <ul class="depth1">
+                        <!-- 모바일ver에서 메뉴 열리면 open 클래스 추가 -->
                         <li>
-                            <a href="contents/info.html">회사소개</a><!--기업정보로 이동-->
+                            <a href="contents/info.html"><span>회사소개</span></a><!--기업정보로 이동-->
                             <ul class="depth2">
-                                <li><a href="contents/info.html">기업정보</a></li>
-                                <li><a href="contents/ceo.html">CEO인사말</a></li>
-                                <li><a href="contents/history.html">연혁</a></li>
-                                <li><a href="contents/org.html">조직도</a></li>
-                                <li><a href="contents/tech.html">기술혁신</a></li>
-                                <li><a href="contents/map.html">찾아오시는길</a></li>
+                                <li><a href="contents/info.html"><span>기업정보</span></a></li>
+                                <li><a href="contents/ceo.html"><span>CEO인사말</span></a></li>
+                                <li><a href="contents/history.html"><span>연혁</span></a></li>
+                                <li><a href="contents/org.html"><span>조직도</span></a></li>
+                                <li><a href="contents/tech.html"><span>기술혁신</span></a></li>
+                                <li><a href="contents/map.html"><span>찾아오시는길</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/esg01.html">ESG</a><!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/esg01.html"><span>ESG</span></a><!--첫번째 하위메뉴로 이동-->
                             <ul class="depth2">
-                                <li><a href="contents/esg01.html">윤리경영</a></li>
-                                <li><a href="contents/esg02.html">품질경영</a></li>
-                                <li><a href="contents/esg03.html">안전경영</a></li>
-                                <li><a href="contents/esg04.html">환경경영</a></li>
-                                <li><a href="contents/esg05.html">상생경영</a></li>
+                                <li><a href="contents/esg01.html"><span>윤리경영</span></a></li>
+                                <li><a href="contents/esg02.html"><span>품질경영</span></a></li>
+                                <li><a href="contents/esg03.html"><span>안전경영</span></a></li>
+                                <li><a href="contents/esg04.html"><span>환경경영</span></a></li>
+                                <li><a href="contents/esg05.html"><span>상생경영</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/biz01.html">사업분야</a><!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/biz01.html"><span>사업분야</span></a><!--첫번째 하위메뉴로 이동-->
                             <ul class="depth2">
-                                <li><a href="contents/biz01.html">건축사업</a></li>
-                                <li><a href="contents/biz02.html">토목사업</a></li>
-                                <li><a href="contents/biz03.html">주택사업</a></li>
-                                <li><a href="contents/biz04.html">플랜트/환경사업</a></li>
-                                <li><a href="contents/biz05.html">사업실적검색</a></li>
+                                <li><a href="contents/biz01.html"><span>건축사업</span></a></li>
+                                <li><a href="contents/biz02.html"><span>토목사업</span></a></li>
+                                <li><a href="contents/biz03.html"><span>주택사업</span></a></li>
+                                <li><a href="contents/biz04.html"><span>플랜트/환경사업</span></a></li>
+                                <li><a href="contents/biz05.html"><span>사업실적검색</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/ir01.html">IR</a><!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/ir01.html"><span>IR</span></a><!--첫번째 하위메뉴로 이동-->
                             <ul class="depth2">
-                                <li><a href="contents/ir01.html">기업지배구조</a></li>
-                                <li><a href="contents/ir02.html">경영정보</a></li>
-                                <li><a href="contents/ir03.html">재무정보</a></li>
-                                <li><a href="contents/ir04.html">주가정보</a></li>
-                                <li><a href="contents/ir05.html">IR Contact</a></li>
+                                <li><a href="contents/ir01.html"><span>기업지배구조</span></a></li>
+                                <li><a href="contents/ir02.html"><span>경영정보</span></a></li>
+                                <li><a href="contents/ir03.html"><span>재무정보</span></a></li>
+                                <li><a href="contents/ir04.html"><span>주가정보</span></a></li>
+                                <li><a href="contents/ir05.html"><span>IR Contact</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contents/pr01.html">홍보센터</a><!--첫번째 하위메뉴로 이동-->
+                            <a href="contents/pr01.html"><span>홍보센터</span></a><!--첫번째 하위메뉴로 이동-->
                             <ul class="depth2">
-                                <li><a href="contents/pr01.html">금호뉴스</a></li>
-                                <li><a href="contents/pr02.html">분양뉴스</a></li>
-                                <li><a href="contents/pr03.html">CI/BI</a></li>
-                                <li><a href="contents/pr04.html">PR갤러리</a></li>
-                                <li><a href="contents/pr05.html">금호역사관</a></li>
+                                <li><a href="contents/pr01.html"><span>금호뉴스</span></a></li>
+                                <li><a href="contents/pr02.html"><span>분양뉴스</span></a></li>
+                                <li><a href="contents/pr03.html"><span>CI/BI</span></a></li>
+                                <li><a href="contents/pr04.html"><span>PR갤러리</span></a></li>
+                                <li><a href="contents/pr05.html"><span>금호역사관</span></a></li>
                             </ul>
                         </li>
                     </ul>
-                    <button class="gnb_close"><span>메뉴 닫기</span></button>
+                    <button class="gnb_close"><span class="blind">메뉴 닫기</span></button>
                 </div><!--gnb_wrap-->
                 <div class="gnb_bg"></div><!--메뉴 배경-->
             </nav><!--gnb=-->
@@ -90,10 +96,10 @@
                         <div class="photo"><img src="images/main/visual01.jpg" alt=""></div>
                         <div class="txt">
                             <div class="wrapper">
-                                <h2>
+                                <h3>
                                     <strong class="line"><span>Guided by Vision,</span></strong>
                                     <strong class="line"><span>Built on Integrity and Expertise</span></strong>
-                                </h2>
+                                </h3>
                                 <p>
                                     <strong class="line"><span>Our commitment to quality and trust drives every project we bring to life</span></strong>
                                 </p>
@@ -104,10 +110,10 @@
                         <div class="photo"><img src="images/main/visual02.jpg" alt=""></div>
                         <div class="txt">
                             <div class="wrapper">
-                                <h2>
+                                <h3>
                                     <strong class="line"><span>Building Meaningful Value,</span></strong>
                                     <strong class="line"><span>Beyond Boundaries and Expectations</span></strong>
-                                </h2>
+                                </h3>
                                 <p>
                                     <strong class="line"><span>We pursue excellence that inspires growth and advances global innovation</span></strong>
                                 </p>
@@ -118,10 +124,10 @@
                         <div class="photo"><img src="images/main/visual03.jpg" alt=""></div>
                         <div class="txt">
                             <div class="wrapper">
-                                <h2>
+                                <h3>
                                     <strong class="line"><span>Connecting People and Places,</span></strong>
                                     <strong class="line"><span>Creating Value That Endures</span></strong>
-                                </h2>
+                                </h3>
                                 <p>
                                     <strong class="line"><span>We design networks that move cities forward and bring communities together</span></strong>
                                 </p>
