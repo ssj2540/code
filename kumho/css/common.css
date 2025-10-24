@@ -86,3 +86,8 @@ body {
         display: none;
     }
 }
+
+::selection { /* 글자 긁을 때 나오는 컬러 */
+    background-color: var(--color-main);
+    color: var(--color-white);
+}
