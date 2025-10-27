@@ -332,5 +332,6 @@ header.up:not(.menu_pc, .menu_mo) {
 }/*media*/
 
 footer {
-    margin: 500px 0 0 0;
+    background-color: var(--color-dark);
+    padding: 280px 0 0 0;
 }
