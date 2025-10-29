@@ -449,6 +449,9 @@ footer .inner .f_info {
     }
 }/*media*/
 @media screen and (max-width:1024px) {
+    footer {
+        font-size: 1.6rem;
+    }
     footer .wrapper {
         flex-direction: column;
         gap: 20px 0;
@@ -462,7 +465,7 @@ footer .inner .f_info {
 }/*media*/
 @media screen and (max-width:768px){
     footer {
-        padding: 81px 0 81px 0;
+        padding: 54px 0 64px 0;
         font-size: 1.5rem;
     }
     footer .wrapper {
@@ -477,11 +480,11 @@ footer .inner .f_info {
         right: auto;
         top: auto;
         gap: 0 15px;
-        margin: 27px 0 63px 0; 
+        margin: 27px 0 42px 0; 
     }
     footer .f_util .family_site {
         width: calc(100% - 57px);
-        max-width: 473px;
+        max-width: 370px;
     }
     footer .inner .f_nav ul {
         gap: 0 1.5882em;

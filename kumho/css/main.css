@@ -168,7 +168,7 @@ section .tit h2 {
         display: none;
     }
     section .tit h2 {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
         margin-top: 0;
     }
     section .tit h2 span {
@@ -177,7 +177,7 @@ section .tit h2 {
 }/*media*/
 @media screen and (max-width:768px){
     section .tit h2 {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
     }
 }/*media*/
 /************************** section 공통 스타일 끝 ******************************/
@@ -269,6 +269,9 @@ section .tit h2 {
         opacity: 0;
         white-space: nowrap;
     }
+        .biz .list ul li.active .txt p {
+        opacity: 1;
+    }
     .biz .list ul li .txt a {
         opacity: 0;
         display: inline-block;
@@ -278,6 +281,13 @@ section .tit h2 {
         border-radius: 20px;
         position: relative; /* after 정렬 기준 */
         transition: 0.3s;
+    }
+    .biz .list ul li.active .txt a {
+        opacity: 1;
+    }
+    .biz .list ul li.active .txt a:hover {
+    background-color: var(--color-white);
+    color: var( --color-dark);
     }
     .biz .list ul li .txt a::after {
         content: "";
@@ -291,16 +301,6 @@ section .tit h2 {
         background-size: contain;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.91037 8.84625L13.3335 4.42313L8.91037 0L8.32058 0.589792L11.7372 4.00646H0.000163078V4.83979H11.7372L8.32058 8.25646L8.91037 8.84625Z' /%3E%3C/svg%3E%0A");
         transition: 0.3s;
-    }
-    .biz .list ul li.active .txt p {
-        opacity: 1;
-    }
-    .biz .list ul li.active .txt a {
-        opacity: 1;
-    }
-    .biz .list ul li.active .txt a:hover {
-        background-color: var(--color-white);
-        color: var( --color-dark);
     }
     .biz .list ul li .txt a:hover::after {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.91037 8.84625L13.3335 4.42313L8.91037 0L8.32058 0.589792L11.7372 4.00646H0.000163078V4.83979H11.7372L8.32058 8.25646L8.91037 8.84625Z' /%3E%3C/svg%3E%0A");
@@ -317,7 +317,7 @@ section .tit h2 {
 }/*media*/
 @media screen and (min-width:1025px) and (max-width:1280px){ /* 1280 ~ 1025 */
     .biz .list ul li .txt strong {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
     .biz .list ul li .txt h3 {
         font-size: 3rem;
@@ -372,15 +372,18 @@ section .tit h2 {
         margin: 120px 0 0 0;
     }
     .biz .list {
-        margin: 30px 0 0 0;
+        margin: 25px 0 0 0;
     }
     .biz .list ul li {
         width: 250px; /* 4등분(25%) -> 고정 넓이, 높이로 변경 */
         height: 320px;
-        padding: 0 20px 30px 20px;
+        padding: 0 20px 35px 20px;
+    }
+    .biz .list ul li .txt strong {
+        font-size: 1.5rem;
     }
     .biz .list ul li .txt h3 {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
     .biz .list ul li .txt p {
         display: none;
@@ -556,7 +559,7 @@ section .tit h2 {
         margin: 120px 0 0 0;
     }
     .news .list {
-        margin: 30px 0 0 0;
+        margin: 25px 0 0 0;
     }
     .news .list .swiper-slide a .date {
         font-size: 2.8rem;
