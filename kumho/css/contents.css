@@ -96,7 +96,7 @@
         margin: 0 0 27px 0;
     }
     .ctn_ceo .ceo_cont p {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     .ctn_ceo .ceo_cont .sign {
         font-size: 1.5rem;
@@ -117,5 +117,8 @@
     }
     .ctn_ceo .ceo_head .ceo_txt p br.pc_only {
         display: none;
+    }
+    .ctn_ceo .ceo_cont p {
+        font-size: 1.5rem;
     }
 }
