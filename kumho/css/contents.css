@@ -86,7 +86,7 @@
 }
 @media screen and (max-width:1024px){
     .ctn_ceo .ceo_head .ceo_txt p {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
     .ctn_ceo .ceo_cont {
         margin: 55px 0 28px 0;
@@ -111,7 +111,7 @@
         height: 65px;
     }
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:550px){
     .ctn_ceo .ceo_head .ceo_txt p {
         font-size: 2.8rem;
     }
