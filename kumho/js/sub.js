@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log('연결')
     const snbScroll = function () {
         const $menu_wrap = $(".snb ul");  /* 선택자를 잘 입력해야함 */
         const $menu_li = $(".snb ul li");

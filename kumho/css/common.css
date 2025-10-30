@@ -82,9 +82,6 @@ body {
     .mo_only { /* 모바일에서만 보임 */
         display: block;
     }
-    .pc_only { /* pc버전에서만 보임 */
-        display: none;
-    }
 }
 
 ::selection { /* 글자 긁을 때 나오는 컬러 */

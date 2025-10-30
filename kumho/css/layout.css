@@ -336,7 +336,8 @@ header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
     font-weight: 700;
     color: var(--color-main);
 }
-header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
     color: var(--color-main);
 }
 @media screen and (min-width:1025px) {
@@ -344,12 +345,13 @@ header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
         content: "";
         position: absolute;
         left: 50%;
-        bottom: 0;
+        bottom: -1px;
         width: 80%;
-        height: 1px;
+        height: 2px;
         background-color: var(--color-white);
     }
-    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after,
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
         background-color: var(--color-main);
     }
 }
