@@ -370,6 +370,9 @@
     .ctn_history .his_cont .his_tit h4 br {
         display: none;
     }
+    .ctn_history .his_cont .his_tit .photo {
+        display: none;
+    }
     .ctn_history .his_cont .his_year {
         width: auto;
         padding-left: 23px;
