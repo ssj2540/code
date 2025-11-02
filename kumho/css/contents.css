@@ -185,6 +185,17 @@
     color: var(--color-txt-title);
     margin: 16px 0 0 0;
 }
+.ctn_history .his_cont .his_tit .photo {
+    height: 331px;
+    overflow: hidden;
+    margin: 23px 0 0 0;
+    border-radius: 30px;
+}
+.ctn_history .his_cont .his_tit .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .ctn_history .his_cont .his_year {
     width: 50%;
     position: relative; /* before 정렬 기준 */
