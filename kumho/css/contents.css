@@ -6,7 +6,7 @@
            이 파일에 있는 css를 수정하면 해당 페이지 1개에만 영향을 끼침
 ************************************/
 
-/* 회사소개 - CEO인사말 */
+/********************* 회사소개 > CEO인사말 *********************/
 .ctn_ceo .ceo_head {
     height: 300dvh;
     position: relative; /* photo 정렬 기준 */
@@ -123,7 +123,7 @@
     }
 }
 
-/********************* 기업소개 > 연혁 *********************/
+/********************* 회사소개 > 연혁 *********************/
 .ctn_history .his_head {
     font-size: clamp(2.8rem, 3vw, 5rem);
     /* padding: 3.36em 0 3.36em 0; */
@@ -434,3 +434,322 @@
         font-size: 1.5rem;
     }
 }/*media*/
+
+/********************* 회사소개 > 찾아오시는길 *********************/
+.ctn_map {
+    margin: 0 0 91px 0;
+}
+.ctn_map .map_area {
+    height: 580px;
+}
+.ctn_map .map_area iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+.ctn_map .map_info {
+    margin-top: -127px;
+    position: relative; /* z-index는 반드시 position값이 있어야함 */
+    z-index: 10;
+}
+.ctn_map .map_info .info_wrap {
+    background-color: var(--color-main);
+    color: var(--color-white);
+    padding: 74px 80px;
+}
+.ctn_map .map_info .info_wrap h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 44px 0;
+}
+.ctn_map .map_info .group {
+    display: flex;
+    gap: 0 60px;
+}
+.ctn_map .map_info .group .item {
+    position: relative; /* before 정렬 기준 */
+    padding-left: 76px;
+}
+.ctn_map .map_info .group .item::before {
+    content: "";
+    position: absolute; /* item 기준 정렬 */
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+}
+.ctn_map .map_info .group .item.add::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.1598 23.279L7.34538 20.1939L1.53114 22.4427C1.15457 22.5823 0.805176 22.5414 0.482958 22.32C0.160986 22.0987 0 21.7874 0 21.3861V3.41817C0 3.15643 0.0635376 2.91734 0.190613 2.70089C0.317688 2.48421 0.502791 2.3335 0.745923 2.24879L7.34538 0L16.1598 3.08506L21.9741 0.83627C22.3506 0.696708 22.7 0.723518 23.0222 0.916702C23.3442 1.10964 23.5052 1.39733 23.5052 1.77978V19.9736C23.5052 20.2541 23.4275 20.4981 23.272 20.7055C23.1168 20.9127 22.9083 21.0586 22.6465 21.1433L16.1598 23.279ZM15.4253 21.4878V4.29962L8.07992 1.73461V18.9228L15.4253 21.4878ZM16.8944 21.4878L22.0361 19.7929V2.38431L16.8944 4.29962V21.4878ZM1.46908 20.8947L6.61084 18.9228V1.73461L1.46908 3.48612V20.8947Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .group .item.tel::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.9344 23.5052C19.4578 23.5052 16.919 22.8851 14.318 21.645C11.717 20.4046 9.30047 18.6637 7.06846 16.4224C4.83669 14.1814 3.10061 11.765 1.86022 9.17328C0.620072 6.58158 0 4.04743 0 1.57081C0 1.12201 0.146908 0.748003 0.440723 0.448802C0.734538 0.1496 1.10181 0 1.54253 0H5.17555C5.5749 0 5.92331 0.125729 6.2208 0.377186C6.51853 0.628643 6.72016 0.951226 6.82569 1.34494L7.55435 4.84795C7.62218 5.25856 7.60993 5.61738 7.51763 5.92441C7.42532 6.23145 7.26238 6.48291 7.02879 6.67878L3.80564 9.68451C4.40821 10.7787 5.07443 11.7953 5.80432 12.7343C6.5342 13.6733 7.31257 14.5627 8.13941 15.4025C8.99246 16.2558 9.91063 17.0492 10.8939 17.7828C11.877 18.5164 12.9561 19.209 14.1314 19.8608L17.273 16.6626C17.5122 16.4046 17.7811 16.2346 18.0795 16.1529C18.378 16.0708 18.7081 16.0543 19.0697 16.1033L22.1603 16.7361C22.5596 16.834 22.8837 17.0352 23.1324 17.3395C23.3809 17.6436 23.5052 17.9925 23.5052 18.3862V21.9627C23.5052 22.4034 23.3556 22.7707 23.0564 23.0645C22.7572 23.3583 22.3832 23.5052 21.9344 23.5052ZM3.11628 8.30579L5.9358 5.7125C6.02982 5.63709 6.09103 5.53352 6.11943 5.40179C6.14759 5.26982 6.14282 5.1474 6.10511 5.03452L5.45247 1.92118C5.41477 1.77036 5.3489 1.65736 5.25488 1.5822C5.16062 1.50678 5.03819 1.46908 4.88761 1.46908H1.87307C1.75995 1.46908 1.66581 1.50678 1.59064 1.5822C1.51523 1.65736 1.47752 1.75151 1.47752 1.86462C1.50568 2.86849 1.66299 3.91656 1.94946 5.00881C2.23569 6.10132 2.62463 7.20031 3.11628 8.30579ZM15.53 20.5502C16.5223 21.0418 17.5803 21.4053 18.7039 21.6406C19.8273 21.8761 20.8061 22.0023 21.6406 22.0192C21.7537 22.0192 21.8478 21.9815 21.923 21.9061C21.9984 21.8307 22.0361 21.7366 22.0361 21.6237V18.6742C22.0361 18.5236 21.9984 18.4012 21.923 18.3069C21.8478 18.2129 21.7349 18.147 21.584 18.1093L18.8662 17.5525C18.7534 17.5148 18.6546 17.5102 18.5698 17.5386C18.4849 17.5667 18.3954 17.6279 18.3014 17.7222L15.53 20.5502Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_map .map_info .group .item h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+}
+.ctn_map .map_info .group .item p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 26px;
+}
+@media screen and (max-width:1024px){
+    .ctn_map .map_area {
+        height: 350px;
+    }
+    .ctn_map .map_info {
+        margin-top: -63px;
+    }
+    .ctn_map .map_info .info_wrap {
+        padding: 37px 40px;
+    }
+    .ctn_map .map_info .info_wrap h3 {
+        font-size: 2.8rem;
+        margin: 0 0 22px 0;
+    }
+    .ctn_map .map_info .group {
+        flex-direction: column;
+        gap: 25px 0;
+    }
+    .ctn_map .map_info .group .item {
+        padding-left: 65px;
+    }
+    .ctn_map .map_info .group .item::before {
+        top: 2px;
+        width: 50px;
+        height: 50px;
+        background-size: 20px;
+    }
+    .ctn_map .map_info .group .item h4 {
+        font-size: 1.8rem;
+        margin: 0 0 4px 0;
+    }
+    .ctn_map .map_info .group .item p {
+        gap: 0 13px;
+    }
+}/*media*/
+
+/********************* 홍보센터 > 금호역사관 *********************/
+.ctn_pr05 .search {
+    max-width: 850px;
+    margin: 0 auto; /* 가운데 */   
+}
+.ctn_pr05 .search .sch_wrap {
+    border: 3px solid var(--color-main);
+    border-radius: 50px;
+    height: 62px;
+    padding: 0 21px 0 41px;
+    display: flex; /* 검색어입력 - 버튼 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+.ctn_pr05 .search .sch_wrap label {
+    display: none; /* 접근성 때문에 필수 입력 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"] {
+    width: calc(100% - 54px);
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-txt-title);
+    border: none;
+    outline: none; /* 글을 입력할 때 검은 테두리 잡히는 것 */
+}
+.ctn_pr05 .search .sch_wrap input[type="text"]::placeholder {
+    font-weight: 400;
+    color: #767676;
+}
+.ctn_pr05 .search .sch_wrap input[type="submit"] { /* type 선택자 */    
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background-color: transparent;
+    color: transparent; /* 글자컬러 투명 - font-size: 0; 하면 접근성 위배 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' fill='%23C11920' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.2247 27.9374L16.0184 17.7308C15.2059 18.4016 14.2716 18.9266 13.2153 19.3058C12.1591 19.685 11.0664 19.8746 9.93728 19.8746C7.15988 19.8746 4.80932 18.913 2.88559 16.9898C0.961865 15.0666 0 12.7166 0 9.93972C0 7.16314 0.961593 4.8123 2.88478 2.88722C4.80797 0.962407 7.15799 0 9.93484 0C12.7114 0 15.0623 0.961863 16.9873 2.88559C18.9122 4.80932 19.8746 7.15989 19.8746 9.93728C19.8746 11.0978 19.6798 12.2062 19.2904 13.2624C18.9006 14.3187 18.3808 15.2374 17.7308 16.0184L27.937 26.2247L26.2247 27.9374ZM9.93728 17.4375C12.0311 17.4375 13.8045 16.7108 15.2575 15.2575C16.7108 13.8045 17.4375 12.0311 17.4375 9.93728C17.4375 7.84347 16.7108 6.07005 15.2575 4.61703C13.8045 3.16374 12.0311 2.43709 9.93728 2.43709C7.84347 2.43709 6.07005 3.16374 4.61703 4.61703C3.16374 6.07005 2.43709 7.84347 2.43709 9.93728C2.43709 12.0311 3.16374 13.8045 4.61703 15.2575C6.07005 16.7108 7.84347 17.4375 9.93728 17.4375Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join {
+    margin: 0px 0 87px 0;
+}
+.ctn_pr05 .join h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-txt-title);
+    margin: 100px 0 28px 0;
+}
+.ctn_pr05 .join .agree .agree_box {
+    border: 1px solid #767676;
+    border-radius: 10px;
+    color: #767676;
+    padding: 37px 36px;
+    height: 374px;
+    overflow-y: auto; /* 세로 스크롤바 허용 */
+}
+.ctn_pr05 .join .agree .agree_box p {
+    white-space: pre-line;
+}
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar {
+    width: 18px
+}
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-thumb {
+    height: 80px;
+    background: #999;
+    border-radius: 10px;
+    border: 6px solid #fff
+}
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent
+}
+.ctn_pr05 .join .agree .agree_btn {
+    margin: 25px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 69px;
+    font-size: 2rem;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"] {
+    display: none; /* input은 스타일 주기 힘들기 때문에 숨기고 label에 스타일 줌 */
+}
+.ctn_pr05 .join .agree .agree_btn label {
+    padding: 4px 0 4px 40px;
+    position: relative; /* before 정렬 기준 */
+    cursor: pointer;
+}
+.ctn_pr05 .join .agree .agree_btn label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #767676;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 12' fill='%23767676' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.3345 11.3038L0 5.96925L1.069 4.9L5.3345 9.1655L14.5 0L15.569 1.06925L5.3345 11.3038Z' /%3E%3C/svg%3E%0A");
+}
+/*
+    <input type="radio" name="agree" id="yes"><label for="yes">동의함</label>
+    input 뒤에 label 왔을 때 input + label
+    이때 input이 체크되면 :checked (가상 선택자)
+*/
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label {
+    font-weight: 700;
+    color: var(--color-main);
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label::before {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 12' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.3345 11.3038L0 5.96925L1.069 4.9L5.3345 9.1655L14.5 0L15.569 1.06925L5.3345 11.3038Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .join_info {
+    border-top: 1px solid var(--color-dark);
+    border-bottom: 1px solid var(--color-dark);
+    padding: 9px 0 9px 0;
+}
+.ctn_pr05 .join .join_info .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+.ctn_pr05 .join .join_info .item label {
+    width: 149px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-txt-title);
+    padding: 7px 0 0 0;
+}
+.ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="txt"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: calc(100% - 149px);
+    height: 44px;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    padding: 0 12px;
+    color: var(--color-txt-title);
+    outline: none;
+}
+.ctn_pr05 .join .join_info .item textarea {
+    height: 324px;
+    resize: none; /* 오른쪽 하단 리사이즈 버튼 숨김 */
+    padding: 9px;
+}
+.ctn_pr05 .join .join_btn {
+    margin: 43px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 25px;
+}
+.ctn_pr05 .join .join_btn input,
+.ctn_pr05 .join .join_btn a,
+.ctn_pr05 .join .join_btn button {
+    display: block;
+    font-size: 20px;
+    color: var(--color-white);
+    width: 127px;
+    height: 54px;
+    line-height: 54px; 
+    /* 글자가 가운데로 안 들어갈 경우 - 서체 영향
+       행간 + padding = height 높이값과 동일하게 */
+    text-align: center;
+    border-radius: 5px;
+    background-color: #C6C6C6;
+    border: none;
+}
+.ctn_pr05 .join .join_btn input.ok,
+.ctn_pr05 .join .join_btn a.ok,
+.ctn_pr05 .join .join_btn button.ok {
+    background-color: var(--color-main);
+}
+@media screen and (max-width:768px){
+    .ctn_pr05 .join .join_info .item {
+        flex-direction: column;
+    }
+    .ctn_pr05 .join .join_info .item label {
+        padding: 0 0 7px 0;
+    }
+    .ctn_pr05 .join .join_info .item select,
+    .ctn_pr05 .join .join_info .item input[type="txt"],
+    .ctn_pr05 .join .join_info .item textarea {
+        width: 100%;
+    }
+}/*media*/
+
+/********************* IR > 재무정보 *********************/
+.ctn_ir03 {
+    padding: 0 0 87px 0;
+}
+.ctn_ir03 h3 {
+    margin: 61px 0 28px 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-txt-title);
+}
+@media screen and (max-width:768px){
+    /* 모바일에서 몇 칸 날리기 */
+    .ctn_ir03 .table_wrap.money table col:last-child, 
+    .ctn_ir03 .table_wrap.money table th:last-child, 
+    .ctn_ir03 .table_wrap.money table td:last-child {
+        display: none;
+    }
+    .ctn_ir03 .table_wrap.money table th:nth-last-child(2), 
+    .ctn_ir03 .table_wrap.money table td:nth-last-child(2) {
+        border-right: none;
+    }
+}
