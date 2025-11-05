@@ -1,0 +1,68 @@
+/***********************************
+* 파일명 : main.css
+* 작성자 : 신수진
+* 작성일 : 25-11-05
+************************************/
+
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+h2 {
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+}
+.visual {
+    background-color: black;
+    color: #fff;
+}
+.tree {
+
+}
+.work {
+    background-color: pink;
+    color: #fff;
+}
+.news {
+
+}
+footer {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+
+/*
+    <li>
+        <a></a> --- span을 덮는 용도
+        <span class="fp-tooltip"></span>
+    </li>
+*/
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 7px 0 7px 0;
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid red;
+}
+#fp-nav ul li a span {
+    display: none;
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    left: auto;
+    top: auto;
+    color: var(--color-white7);
+    font-size: inherit;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+}
