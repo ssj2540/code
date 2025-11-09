@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!--AOS를 작동시키기 위한 css와 js파일-->
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!--jqeury 라이브러리를 반드시 먼저 추가-->
@@ -40,26 +42,26 @@
             <section class="culture">
                 <div class="wrapper">
                     <div class="tit">
-                        <h2>바다와 함께 사는 삶, 청산의 기억</h2>
-                        <p>돌담길에 쌓인 발자국과 구들장논의 물길, 마을을 채우는 웃음소리까지. 청산도의 기억은 일상이자 풍경이 되어 여행자의 마음에 남습니다</p>
+                        <h2 data-aos="fade-up">바다와 함께 사는 삶, 청산의 기억</h2>
+                        <p data-aos="fade-up">돌담길에 쌓인 발자국과 구들장논의 물길, 마을을 채우는 웃음소리까지. 청산도의 기억은 일상이자 풍경이 되어 여행자의 마음에 남습니다</p>
                     </div><!--tit-->
                     <div class="list">
                         <ul>
-                            <li>
+                            <li data-aos="fade-up" data-aos-delay="300">
                                 <a href="#n">
                                     <div class="photo"><img src="images/culture01.jpg" alt="사물놀이"></div>
                                     <h3>도락리정월굿</h3>
                                     <p>잡귀를 물리치고 풍년과 풍어, 마을의 안녕을 기원합니다.</p>
                                 </a>
                             </li>
-                            <li>
+                            <li data-aos="fade-up"  data-aos-delay="600">
                                 <a href="#n">
                                     <div class="photo"><img src="images/culture02.jpg" alt="묘비"></div>
                                     <h3>청산도 꽃 상여</h3>
                                     <p>꽃상여 행렬은 망자의 넋을 달래며, 청산도의 오래된 장례문화를 이어갑니다.</p>
                                 </a>
                             </li>
-                            <li>
+                            <li data-aos="fade-up" data-aos-delay="900">
                                 <a href="#n">
                                     <div class="photo"><img src="images/culture03.jpg" alt="썰물 바다"></div>
                                     <h3>도락리 갯영 공표</h3>
@@ -68,16 +70,16 @@
                             </li>
                         </ul>
                     </div><!--list-->
-                    <div class="more"><a href="#n">MORE</a></div>
+                    <div class="more"><a href="#n" data-aos="fade-up">MORE</a></div>
                 </div><!--wrapper-->
             </section><!--culture-->
             <section class="tour">
                 <div class="wrapper">
                     <div class="tit">
-                        <h2>청산의 <em>200년</em>의 시간, 여덟 빛</h2>
-                        <p>청산도의 산과 안개, 달빛 속에서 자연과 사람들의 삶이 어우러진 숨은 이야기를 전합니다.</p>
+                        <h2 data-aos="fade-up">청산의 <em>200년</em>의 시간, 여덟 빛</h2>
+                        <p data-aos="fade-up">청산도의 산과 안개, 달빛 속에서 자연과 사람들의 삶이 어우러진 숨은 이야기를 전합니다.</p>
                     </div><!--tit-->
-                    <div class="list">
+                    <div class="list" data-aos="fade-up">
                         <ul>
                             <!--열러있는 li에 on class 추가 (단 한 개만 on class가 추가)-->
                             <li class="bg1 on">
@@ -106,18 +108,18 @@
                             </li>
                         </ul>
                     </div><!--list-->
-                    <div class="more"><a href="#n">MORE</a></div>
+                    <div class="more"><a href="#n" data-aos="fade-up">MORE</a></div>
                 </div><!--wrapper-->
             </section><!--tour-->
             <section class="community">
                 <div class="wrapper">
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <strong>SLOW CITY</strong>
                         <h2>삶의 쉼표가 되는 섬<br> 청산도</h2>
                         <p>느림 속에 피어나는 청산의 일상</p>
                     </div><!--tit-->
                     <div class="inner">
-                        <div class="notice">
+                        <div class="notice" data-aos="fade-left">
                             <h3>공지사항</h3>
                             <ul>
                                 <li>
@@ -148,9 +150,9 @@
                             <!--마우스 오버 시 이미지가 변경되어야 하는 경우
                                 이미지는 background 처리 해야 함
                                 대체텍스트는 써줘야하고, 글자는 css로 display:non; (안 보이게)-->
-                            <a href="#n" class="more"><span>더보기</span></a>
+                            <a href="#n" class="more" data-aos="fade-left"><span>더보기</span></a>
                         </div><!--notice-->
-                        <div class="service">
+                        <div class="service" data-aos="fade-left" data-aos-delay="300">
                             <ul>
                                 <li class="icon1"><a href="#n">교통</a></li>
                                 <li class="icon2"><a href="#n">음식</a></li>

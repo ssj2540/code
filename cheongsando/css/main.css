@@ -156,7 +156,7 @@ header .util .flow::before {
 .culture .list ul li a {
     display: block;
 }
-.culture .list ul li a .photo {.
+.culture .list ul li a .photo {
     overflow: hidden;
     height: 272px;
 }
